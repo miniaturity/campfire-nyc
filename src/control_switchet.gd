@@ -6,7 +6,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("switch_controls"):
 		get_viewport().set_input_as_handled()
 		
-		var player = get_tree().current_scene.get_node("%Player")
+		var player = get_tree().current_scene.get_node("%StarviaPlayer")
 		var robot = get_tree().current_scene.get_node("%RobotPlayer")
 		
 		if not player or not robot:
