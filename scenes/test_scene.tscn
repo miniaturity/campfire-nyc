@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c6njo6vjiqgik"]
 
-[ext_resource type="PackedScene" uid="uid://dy1ujdrd47cuw" path="res://objects/player.tscn" id="1_j8ivh"]
+[ext_resource type="PackedScene" uid="uid://dy1ujdrd47cuw" path="res://objects/starvia_player.tscn" id="1_j8ivh"]
 [ext_resource type="PackedScene" uid="uid://cy7p2fjmypwn2" path="res://objects/robot_player.tscn" id="2_nd71p"]
 [ext_resource type="TileSet" uid="uid://cboxm6qc4clkn" path="res://assets/robot_world/robot_tileset.tres" id="3_nd71p"]
 
@@ -17,7 +17,7 @@ position = Vector2(576, 368)
 shape = SubResource("RectangleShape2D_7ddre")
 
 [node name="StarviaPlayer" parent="." unique_id=1335828167 instance=ExtResource("1_j8ivh")]
-position = Vector2(576, 264)
+position = Vector2(576, 256)
 
 [node name="RobotPlayer" parent="." unique_id=1395355102 instance=ExtResource("2_nd71p")]
 position = Vector2(574, 448)

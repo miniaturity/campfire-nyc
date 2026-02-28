@@ -24,12 +24,27 @@ var current_level = 1
 
 @onready var spawn_point: CharacterBody2D = get_tree().current_scene.get_node("Spawnpoint")
 
+# Button Tileset Textures
+
+var button_tileset_source_id # TODO: Create button tileset
+
 # Should teleport them back to start positions.
 func kill():
 	starvia_player.global_position = spawn_point.global_position
 	robot_player.global_position = spawn_point.global_position
-
-func set_to_tile(map: TileMapLayer, player: CharacterBody2D, coords: Vector2i):
-	var local_pos = map.map_to_local(coords)
-	player.global_position = map.to_global(local_pos)
 	
+func process_collision(collision: KinematicCollision2D):
+	if (collision.get_collider() is TileMapLayer):
+		var map = collision.get_collider() as TileMapLayer
+		var tile_pos = map.local_to_map(map.to_local(collision.get_position()))
+		
+		if map.get_cell_source_id(tile_pos) != -1:
+			var tile_data = map.get_cell_tile_data(tile_pos)
+			if tile_data:
+				var button = tile_data.get_custom_data("button_id")
+				if button:
+					activate_button(map, button, tile_pos)
+				 
+	
+func activate_button(map: TileMapLayer, button: int, button_pos: Vector2i):
+	map.set_cell(button_pos, button_tileset_source_id, )
