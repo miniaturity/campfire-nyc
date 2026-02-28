@@ -9,6 +9,8 @@ enum TILE_TYPES {
 	DEFAULT = 0,
 	START_POS = 1,
 	KILL = 2,
+	BUTTON = 3,
+	BUTTON_PLATFORM = 4
 }
 
 var current_level = 1
@@ -22,16 +24,20 @@ var current_level = 1
 @onready var starvia_player: CharacterBody2D = get_tree().current_scene.get_node("StarviaPlayer")
 @onready var robot_player: CharacterBody2D = get_tree().current_scene.get_node("RobotPlayer")
 
-@onready var spawn_point: CharacterBody2D = get_tree().current_scene.get_node("Spawnpoint")
-
+@onready var starvia_spawn_point: Marker2D = get_tree().current_scene.get_node("StarviaSpawnPoint")
+@onready var robot_spawn_point: Marker2D = get_tree().current_scene.get_node("RobotSpawnPoint")
 # Button Tileset Textures
 
 var button_tileset_source_id # TODO: Create button tileset
 
+func _ready() -> void:
+	kill()
+
+
 # Should teleport them back to start positions.
 func kill():
-	starvia_player.global_position = spawn_point.global_position
-	robot_player.global_position = spawn_point.global_position
+	starvia_player.global_position = starvia_spawn_point.global_position
+	robot_player.global_position = robot_spawn_point.global_position
 	
 func process_collision(collision: KinematicCollision2D):
 	if (collision.get_collider() is TileMapLayer):

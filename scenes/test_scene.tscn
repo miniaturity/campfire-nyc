@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c6njo6vjiqgik"]
 
 [ext_resource type="PackedScene" uid="uid://cy7p2fjmypwn2" path="res://objects/robot_player.tscn" id="2_nd71p"]
-[ext_resource type="PackedScene" uid="uid://deq3g7bxp14e5" path="res://objects/starvia_player.tscn" id="3_7ddre"]
+[ext_resource type="PackedScene" uid="uid://dy1ujdrd47cuw" path="res://objects/starvia_player.tscn" id="3_7ddre"]
 [ext_resource type="TileSet" uid="uid://cboxm6qc4clkn" path="res://assets/robot_world/robot_tileset.tres" id="3_nd71p"]
 [ext_resource type="TileSet" uid="uid://d2pd1k3fnvsyt" path="res://assets/starvia_world/starvia_tileset.tres" id="4_7ddre"]
 
@@ -18,7 +18,7 @@ position = Vector2(576, 368)
 shape = SubResource("RectangleShape2D_7ddre")
 
 [node name="RobotPlayer" parent="." unique_id=1395355102 instance=ExtResource("2_nd71p")]
-position = Vector2(574, 448)
+position = Vector2(227, 568)
 
 [node name="RobotTileMapLayer" type="TileMapLayer" parent="." unique_id=895338177]
 scale = Vector2(2, 2)
@@ -26,9 +26,15 @@ tile_map_data = PackedByteArray("AAAPAAsAAAACAAMAAAAQAAsAAAACAAAAAAARAAsAAAACAAM
 tile_set = ExtResource("3_nd71p")
 
 [node name="StarviaPlayer" parent="." unique_id=1335828167 instance=ExtResource("3_7ddre")]
-position = Vector2(579, 252)
+position = Vector2(250, 151)
 
 [node name="StarviaTileMapLayer" type="TileMapLayer" parent="." unique_id=1745371319]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAAAoAAAABAAIAAAABAAoAAAACAAMAAAACAAoAAAACAAIAAAADAAoAAAACAAMAAAAEAAoAAAACAAIAAAAFAAoAAAACAAIAAAAGAAoAAAACAAMAAAAHAAoAAAACAAMAAAAIAAoAAAACAAMAAAAJAAoAAAACAAMAAAAKAAoAAAACAAMAAAALAAoAAAACAAMAAAAMAAoAAAACAAMAAAANAAoAAAACAAMAAAAOAAoAAAACAAMAAAAPAAoAAAACAAMAAAAQAAoAAAACAAIAAAARAAoAAAACAAMAAAASAAoAAAACAAMAAAATAAoAAAACAAIAAAAUAAoAAAACAAMAAAAVAAoAAAACAAMAAAAWAAoAAAACAAMAAAAXAAoAAAACAAMAAAAYAAoAAAACAAMAAAAZAAoAAAACAAMAAAAaAAoAAAACAAMAAAAbAAoAAAACAAMAAAAcAAoAAAACAAMAAAAdAAoAAAACAAMAAAAeAAoAAAACAAIAAAAfAAoAAAACAAIAAAAgAAoAAAACAAMAAAAhAAoAAAACAAIAAAAiAAoAAAACAAMAAAAjAAoAAAADAAIAAAAjAAkAAAAAAAEAAAAjAAgAAAADAAEAAAAiAAgAAAACAAMAAAAhAAgAAAACAAEAAAAhAAkAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAgAAAABAAEAAAABAAgAAAACAAMAAAACAAgAAAACAAEAAAACAAkAAAAAAAEAAAADAAgAAAACAAMAAAAEAAgAAAADAAAAAAAEAAkAAAABAAEAAAAFAAkAAAADAAAAAAAgAAgAAAACAAMAAAAfAAgAAAABAAAAAAAfAAkAAAADAAEAAAAeAAkAAAABAAAAAAACAAcAAAAAAAEAAAACAAYAAAADAAAAAAABAAYAAAACAAMAAAAAAAYAAAABAAAAAAAAAAcAAAAAAAEAAAAhAAcAAAAAAAEAAAAhAAYAAAABAAAAAAAiAAYAAAACAAMAAAAjAAYAAAADAAAAAAAjAAcAAAAAAAEAAAAQAAkAAAAAAAEAAAAQAAgAAAADAAAAAAAPAAgAAAABAAIAAAATAAkAAAAAAAEAAAATAAgAAAABAAAAAAAUAAgAAAADAAIAAAAUAAcAAAABAAAAAAAVAAcAAAADAAMAAAAPAAcAAAADAAAAAAAOAAcAAAABAAMAAAA=")
 tile_set = ExtResource("4_7ddre")
+
+[node name="StarviaSpawnPoint" type="Marker2D" parent="." unique_id=1380560332]
+position = Vector2(508, 162)
+
+[node name="RobotSpawnPoint" type="Marker2D" parent="." unique_id=657254218]
+position = Vector2(575, 426)
