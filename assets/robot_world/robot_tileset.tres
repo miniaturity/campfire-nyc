@@ -102,8 +102,6 @@ texture = ExtResource("1_jd605")
 3:3/0/terrain = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 5, -8, 8, -5, 8, 5, 5, 8, -8, 8)
 3:3/0/terrains_peering_bit/left_side = 0
-4:0/0 = 0
-4:0/0/custom_data_0 = true
 
 [resource]
 physics_layer_0/collision_layer = 1
