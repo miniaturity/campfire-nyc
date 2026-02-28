@@ -17,11 +17,9 @@ position = Vector2(576, 368)
 shape = SubResource("RectangleShape2D_7ddre")
 
 [node name="StarviaPlayer" parent="." unique_id=1335828167 instance=ExtResource("1_j8ivh")]
-unique_name_in_owner = true
 position = Vector2(576, 264)
 
 [node name="RobotPlayer" parent="." unique_id=1395355102 instance=ExtResource("2_nd71p")]
-unique_name_in_owner = true
 position = Vector2(574, 448)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=895338177]
