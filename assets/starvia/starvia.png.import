@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bve8bah2s2squ"
-path="res://.godot/imported/box_collision_tileset.png-aa15c97e40f5f7229f5dcf94830c9468.ctex"
+uid="uid://6fuhnjj6n4b5"
+path="res://.godot/imported/starvia.png-e57fe989d1dd6d79f168592b085c4d61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/box_collision_tileset.png"
-dest_files=["res://.godot/imported/box_collision_tileset.png-aa15c97e40f5f7229f5dcf94830c9468.ctex"]
+source_file="res://assets/starvia/starvia.png"
+dest_files=["res://.godot/imported/starvia.png-e57fe989d1dd6d79f168592b085c4d61.ctex"]
 
 [params]
 
