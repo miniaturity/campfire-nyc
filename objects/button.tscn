@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://1sqg1tks871u"]
+
+[ext_resource type="Script" uid="uid://bxw5on77d2q47" path="res://src/button.gd" id="1_8wdun"]
+[ext_resource type="Texture2D" uid="uid://sf44bkglbrq7" path="res://assets/button.png" id="1_bri14"]
+[ext_resource type="Texture2D" uid="uid://p7tnkr2ngs4v" path="res://assets/button_hl.png" id="2_8wdun"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wdun"]
+size = Vector2(12, 21)
+
+[node name="Button" type="Node2D" unique_id=1238348574]
+texture_filter = 1
+script = ExtResource("1_8wdun")
+
+[node name="BaseButtonSprite" type="Sprite2D" parent="." unique_id=1836633879]
+texture = ExtResource("1_bri14")
+
+[node name="ButtonHighlightSprite" type="Sprite2D" parent="." unique_id=187307851]
+texture = ExtResource("2_8wdun")
+vframes = 2
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=1378073176]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision" unique_id=181437590]
+polygon = PackedVector2Array(-8, 8, -5, 6, 5, 6, 8, 8)
+
+[node name="TriggerArea" type="Area2D" parent="." unique_id=1877435713]
+
+[node name="TriggerShape" type="CollisionShape2D" parent="TriggerArea" unique_id=2078122261]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_8wdun")
