@@ -34,6 +34,32 @@ var active: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	button_highlight_sprite.self_modulate = button_color
+	
+	if target == null:
+		push_error("No target!!")
+		return
+	
+	if effect_type == EffectType.ENABLE:
+		_disable_target(target, false)
+	
+	if effect_type == EffectType.ENABLE:
+		_enable_target(target, false)
+
+func _enable_target(target: Node2D, do_tween: bool = true):
+	var tween = create_tween()
+	if do_tween:
+		tween.tween_property(target, "modulate", Color(1,1,1,1), 0.5)
+	else:
+		target.modulate = Color(1,1,1,1)
+	target.process_mode = Node.PROCESS_MODE_INHERIT
+
+func _disable_target(target: Node2D, do_tween: bool = true):
+	var tween = create_tween()
+	if do_tween:
+		tween.tween_property(target, "modulate", Color(1,1,1,0), 0.5)
+	else:
+		target.modulate = Color(1,1,1,0)
+	target.process_mode = Node.PROCESS_MODE_DISABLED
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -49,14 +75,12 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 		push_error("This button has no target!")
 		return
 	
+	button_highlight_sprite.frame = 1
+	
 	if effect_type == EffectType.DISABLE:
-		var tween = create_tween()
-		tween.tween_property(target, "modulate", Color(1,1,1,0), 0.5)
-		target.process_mode = Node.PROCESS_MODE_DISABLED
+		_disable_target(target)
 	else:
-		var tween = create_tween()
-		tween.tween_property(target, "modulate", Color(1,1,1,1), 0.5)
-		target.process_mode = Node.PROCESS_MODE_INHERIT
+		_enable_target(target)
 
 
 func _on_trigger_area_body_exited(body: Node2D) -> void:
@@ -71,11 +95,9 @@ func _on_trigger_area_body_exited(body: Node2D) -> void:
 		push_error("This button has no target!")
 		return
 	
+	button_highlight_sprite.frame = 0
+	
 	if effect_type == EffectType.ENABLE:
-		var tween = create_tween()
-		tween.tween_property(target, "modulate", Color(1,1,1,0), 0.5)
-		target.process_mode = Node.PROCESS_MODE_DISABLED
+		_disable_target(target)
 	else:
-		var tween = create_tween()
-		tween.tween_property(target, "modulate", Color(1,1,1,1), 0.5)
-		target.process_mode = Node.PROCESS_MODE_INHERIT
+		_enable_target(target)
