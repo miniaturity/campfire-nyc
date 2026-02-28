@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://c6njo6vjiqgik"]
 
+[ext_resource type="Script" uid="uid://cquu077xya2wx" path="res://scenes/SceneManager.gd" id="1_qjeyg"]
 [ext_resource type="PackedScene" uid="uid://cy7p2fjmypwn2" path="res://objects/robot_player.tscn" id="2_nd71p"]
 [ext_resource type="PackedScene" uid="uid://dy1ujdrd47cuw" path="res://objects/starvia_player.tscn" id="3_7ddre"]
 [ext_resource type="TileSet" uid="uid://cboxm6qc4clkn" path="res://assets/robot_world/robot_tileset.tres" id="3_nd71p"]
@@ -10,6 +11,7 @@ size = Vector2(184, 20)
 
 [node name="TestScene" type="Node2D" unique_id=66781813]
 texture_filter = 1
+script = ExtResource("1_qjeyg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1534872153]
 position = Vector2(576, 368)

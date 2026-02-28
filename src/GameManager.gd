@@ -17,14 +17,22 @@ var current_level = 1
 
 # TODO: create the tilemaps
 # !! WARNING: These will error if they are not properly named.
-@onready var starvia_tile_map: TileMapLayer = get_tree().current_scene.get_node("StarviaTileMapLayer")
-@onready var robot_tile_map: TileMapLayer = get_tree().current_scene.get_node("RobotTileMapLayer")
+var starvia_tile_map: TileMapLayer
+var robot_tile_map: TileMapLayer
 
 # !! WARNING: These will error if they are not properly named.
-@onready var starvia_player: CharacterBody2D = get_tree().current_scene.get_node("StarviaPlayer")
-@onready var robot_player: CharacterBody2D = get_tree().current_scene.get_node("RobotPlayer")
+var starvia_player: CharacterBody2D
+var robot_player: CharacterBody2D
+
+func register_level(starvia_map, robot_map, starvia_p, robot_p):
+	starvia_tile_map = starvia_map
+	robot_tile_map = robot_map
+	starvia_player = starvia_p
+	robot_player = robot_p
+	
 
 # Restarts scene
 func kill():
 	print("Killed")
-	get_tree().reload_current_scene()
+	if (get_tree().current_scene):
+		get_tree().reload_current_scene.call_deferred()

@@ -109,7 +109,7 @@ scenes/1/scene = ExtResource("2_dm7yq")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mjhtt"]
 texture = ExtResource("3_akgns")
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.9457426, -5.450263, 5.5493593, -5.152976, 8, 8, -8, 8)
 0:0/0/custom_data_1 = 2
 
 [resource]

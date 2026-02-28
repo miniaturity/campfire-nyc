@@ -70,25 +70,26 @@ func _physics_process(delta: float) -> void:
 	if Input.get_axis("move_left", "move_right") == 0 or in_control == false:
 		velocity.x = 0
 	move_and_slide()
+	check_tile_collision_data()
 
-
-func _on_area_2d_body_entered(entered_body: Node2D) -> void:
-	if entered_body is CharacterBody2D:
-		return
-	print("Generic non CB2D collision detected.")
-	if entered_body is TileMap:
-		print("Collision with tilemap detected.")
-		var tm_collider = entered_body as TileMap
-		var t_coords = tm_collider.local_to_map(tm_collider.to_local(global_position))
-		var t_data = tm_collider.get_cell_tile_data(0, t_coords)
+func check_tile_collision_data():
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
 		
-		if t_data != null:
-			var tile_type = t_data.get_custom_data("TileType")
+		if collider is TileMapLayer:
+			var c_point = collision.get_position()
+			var local_point = GameManager.robot_tile_map.to_local(c_point)
+			var t_coords = GameManager.robot_tile_map.local_to_map(local_point)
+			var t_data = GameManager.robot_tile_map.get_cell_tile_data(t_coords)
 			
-			match tile_type:
-				2:
-					GameManager.kill()
-					pass
-				_:
-					pass
+			if t_data != null:
+				match (t_data.get_custom_data("TileType")):
+					null:
+						pass
+					2:
+						GameManager.kill()
+						pass
+					_:
+						pass
 			
