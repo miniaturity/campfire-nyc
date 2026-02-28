@@ -52,6 +52,9 @@ func _enable_target(target: Node2D, do_tween: bool = true):
 	else:
 		target.modulate = Color(1,1,1,1)
 	target.process_mode = Node.PROCESS_MODE_INHERIT
+	
+	if target is TileMapLayer:
+		target.collision_enabled = false
 
 func _disable_target(target: Node2D, do_tween: bool = true):
 	var tween = create_tween()
@@ -60,6 +63,9 @@ func _disable_target(target: Node2D, do_tween: bool = true):
 	else:
 		target.modulate = Color(1,1,1,0)
 	target.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	if target is TileMapLayer:
+		target.collision_enabled = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
