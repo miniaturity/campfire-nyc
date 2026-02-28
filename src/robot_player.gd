@@ -47,5 +47,5 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_ceiling():
-		velocity += -get_gravity() * delta
+		velocity += -(get_gravity() * 0.9) * delta
 	move_and_slide()
