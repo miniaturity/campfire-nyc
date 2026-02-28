@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c6njo6vjiqgik"]
 
-[ext_resource type="Script" uid="uid://cquu077xya2wx" path="res://scenes/SceneManager.gd" id="1_qjeyg"]
+[ext_resource type="Script" path="res://scenes/SceneManager.gd" id="1_qjeyg"]
 [ext_resource type="PackedScene" uid="uid://cy7p2fjmypwn2" path="res://objects/robot_player.tscn" id="2_nd71p"]
 [ext_resource type="PackedScene" uid="uid://dy1ujdrd47cuw" path="res://objects/starvia_player.tscn" id="3_7ddre"]
 [ext_resource type="TileSet" uid="uid://cboxm6qc4clkn" path="res://assets/robot_world/robot_tileset.tres" id="3_nd71p"]
