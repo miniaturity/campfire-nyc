@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://dy1ujdrd47cuw"]
 
+[ext_resource type="Script" uid="uid://bv8ne5lar5bp0" path="res://src/player.gd" id="1_ykyjo"]
+[ext_resource type="Texture2D" uid="uid://6fuhnjj6n4b5" path="res://assets/starvia.png" id="2_ykyjo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uxov2"]
+height = 52.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1335828167]
+texture_filter = 1
+script = ExtResource("1_ykyjo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=429497017]
+texture = ExtResource("2_ykyjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1234901309]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_uxov2")
