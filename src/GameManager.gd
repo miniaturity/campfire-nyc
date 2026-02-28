@@ -34,5 +34,6 @@ func register_level(starvia_map, robot_map, starvia_p, robot_p):
 # Restarts scene
 func kill():
 	print("Killed")
-	if (get_tree().current_scene):
-		get_tree().reload_current_scene.call_deferred()
+	
+	var scene_path = get_tree().current_scene.scene_file_path
+	get_tree().call_deferred("change_scene_to_file", scene_path)
