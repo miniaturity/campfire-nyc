@@ -12,11 +12,11 @@ enum TILE_TYPES {
 }
 
 # TODO: create the tilemaps
-# NOTE: These will error if they are not properly named.
+# !! WARNING: These will error if they are not properly named.
 @onready var starvia_tile_map: TileMapLayer = get_tree().current_scene.get_node("StarviaTileMapLayer")
 @onready var robot_tile_map: TileMapLayer = get_tree().current_scene.get_node("RobotTileMapLayer")
 
-# NOTE: These will error if they are not properly named.
+# !! WARNING: These will error if they are not properly named.
 @onready var starvia_player: CharacterBody2D = get_tree().current_scene.get_node("StarviaPlayer")
 @onready var robot_player: CharacterBody2D = get_tree().current_scene.get_node("RobotPlayer")
 
@@ -38,11 +38,11 @@ func kill():
 		printerr("StartPos for Robot not found.")
 		pass
 		
-		starvia_player.global_position = starvia_coords
-		robot_player.global_position = robot_coords
-		
-		print("Starvia STARTPOS Coords: " + "(" + starvia_coords.x + "," + starvia_coords.y + ")")
-		print("Robot STARTPOS Coords: " + "(" + robot_coords.x + "," + robot_coords.y + ")")
+	starvia_player.global_position = starvia_coords
+	robot_player.global_position = robot_coords
+	
+	print("Starvia STARTPOS Coords: " + "(" + starvia_coords.x + "," + starvia_coords.y + ")")
+	print("Robot STARTPOS Coords: " + "(" + robot_coords.x + "," + robot_coords.y + ")")
 	
 	
 	
