@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cy7p2fjmypwn2"]
 
 [ext_resource type="Script" uid="uid://8snwk32qsvc4" path="res://src/robot_player.gd" id="1_r5nbg"]
-[ext_resource type="Texture2D" uid="uid://d1crurkjktbhk" path="res://assets/robot_static.png" id="2_1u8lx"]
+[ext_resource type="Texture2D" uid="uid://suo4fdwf8pl0" path="res://assets/robot/body.png" id="2_ucics"]
+[ext_resource type="Texture2D" uid="uid://b84bwm0xgshyr" path="res://assets/robot/big_hand.png" id="3_jk1q2"]
+[ext_resource type="Texture2D" uid="uid://dndb43w3j2cs2" path="res://assets/robot/small_hand.png" id="4_nafbg"]
+[ext_resource type="Texture2D" uid="uid://bvjutxu70sp5o" path="res://assets/robot/head.png" id="5_3us2v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1u8lx"]
 radius = 9.0
@@ -12,7 +15,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
+tracks/0/path = NodePath("Body:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -28,14 +31,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
+tracks/0/path = NodePath("Body:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 0.5743492, 0.21763775),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(0, 2), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gsln4"]
@@ -48,12 +51,27 @@ _data = {
 texture_filter = 1
 script = ExtResource("1_r5nbg")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=193426798]
-texture = ExtResource("2_1u8lx")
+[node name="Body" type="Sprite2D" parent="." unique_id=193426798]
+texture = ExtResource("2_ucics")
 flip_v = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2118204640]
-position = Vector2(3, -5)
+[node name="Hand1" type="Sprite2D" parent="Body" unique_id=1830500971]
+position = Vector2(-13, 0)
+texture = ExtResource("3_jk1q2")
+flip_v = true
+
+[node name="Hand2" type="Sprite2D" parent="Body" unique_id=193064353]
+position = Vector2(13, 0)
+texture = ExtResource("4_nafbg")
+flip_v = true
+
+[node name="Head" type="Sprite2D" parent="Body" unique_id=16683018]
+position = Vector2(0, 26)
+texture = ExtResource("5_3us2v")
+flip_v = true
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2118204640]
+position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_1u8lx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1127049603]
