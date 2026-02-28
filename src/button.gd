@@ -40,12 +40,12 @@ func _ready() -> void:
 		return
 	
 	if effect_type == EffectType.ENABLE:
-		_disable_target(target, false)
+		_disable_target(false)
 	
 	if effect_type == EffectType.ENABLE:
-		_enable_target(target, false)
+		_enable_target(false)
 
-func _enable_target(target: Node2D, do_tween: bool = true):
+func _enable_target(do_tween: bool = true):
 	var tween = create_tween()
 	if do_tween:
 		tween.tween_property(target, "modulate", Color(1,1,1,1), 0.5)
@@ -56,7 +56,7 @@ func _enable_target(target: Node2D, do_tween: bool = true):
 	if target is TileMapLayer:
 		target.collision_enabled = false
 
-func _disable_target(target: Node2D, do_tween: bool = true):
+func _disable_target(do_tween: bool = true):
 	var tween = create_tween()
 	if do_tween:
 		tween.tween_property(target, "modulate", Color(1,1,1,0), 0.5)
@@ -84,9 +84,9 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 	button_highlight_sprite.frame = 1
 	
 	if effect_type == EffectType.DISABLE:
-		_disable_target(target)
+		_disable_target()
 	else:
-		_enable_target(target)
+		_enable_target()
 
 
 func _on_trigger_area_body_exited(body: Node2D) -> void:
@@ -104,6 +104,6 @@ func _on_trigger_area_body_exited(body: Node2D) -> void:
 	button_highlight_sprite.frame = 0
 	
 	if effect_type == EffectType.ENABLE:
-		_disable_target(target)
+		_disable_target()
 	else:
-		_enable_target(target)
+		_enable_target()
