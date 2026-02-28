@@ -33,10 +33,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not in_control:
 		return
 	
-	if event.is_action_pressed("ui_accept") and is_on_ceiling():
+	if event.is_action_pressed("jump") and is_on_ceiling():
 		velocity.y = JUMP_VELOCITY
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("move_left", "move_right")
 	_flip_based_on_direction(direction)
 
 	if direction:
