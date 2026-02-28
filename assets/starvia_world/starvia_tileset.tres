@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bve8bah2s2squ" path="res://assets/starvia_world/starvia_tileset.png" id="1_ee5sl"]
 [ext_resource type="PackedScene" uid="uid://hkxdl7jix6xj" path="res://objects/starvia_start_pos.tscn" id="2_dm7yq"]
+[ext_resource type="Texture2D" uid="uid://c0vtedjlr0i06" path="res://assets/starvia_world/spike.png" id="3_akgns"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ee5sl"]
 texture = ExtResource("1_ee5sl")
@@ -105,6 +106,12 @@ texture = ExtResource("1_ee5sl")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_akgns"]
 scenes/1/scene = ExtResource("2_dm7yq")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mjhtt"]
+texture = ExtResource("3_akgns")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/custom_data_1 = 2
+
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
@@ -112,5 +119,8 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 custom_data_layer_0/name = "StartTile"
 custom_data_layer_0/type = 1
+custom_data_layer_1/name = "TileType"
+custom_data_layer_1/type = 2
 sources/0 = SubResource("TileSetAtlasSource_ee5sl")
 sources/2 = SubResource("TileSetScenesCollectionSource_akgns")
+sources/3 = SubResource("TileSetAtlasSource_mjhtt")

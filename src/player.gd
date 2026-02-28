@@ -44,3 +44,24 @@ func _physics_process(delta: float) -> void:
 	if Input.get_axis("move_left", "move_right") == 0 or in_control == false:
 		velocity.x = 0
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		return
+	
+	if body is TileMap:
+		var tm_collider = body as TileMap
+		var t_coords = tm_collider.local_to_map(tm_collider.to_local(global_position))
+		var t_data = tm_collider.get_cell_tile_data(0, t_coords)
+		
+		if t_data != null:
+			var tile_type = t_data.get_custom_data("TileType")
+			
+			match tile_type:
+				2:
+					GameManager.kill()
+					pass
+				_:
+					pass
+			
