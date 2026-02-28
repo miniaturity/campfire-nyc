@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://hkxdl7jix6xj"]
+
+[ext_resource type="Texture2D" uid="uid://bve8bah2s2squ" path="res://assets/starvia_world/starvia_tileset.png" id="1_ml831"]
+
+[node name="StarviaStartPos" type="Node2D" unique_id=947217468]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=775949476]
+texture = ExtResource("1_ml831")
+hframes = 5
+vframes = 4
+frame = 4
