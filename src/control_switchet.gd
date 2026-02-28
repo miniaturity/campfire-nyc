@@ -6,11 +6,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("switch_controls"):
 		get_viewport().set_input_as_handled()
 		
-		var player = get_tree().current_scene.get_node("%StarviaPlayer")
-		var robot = get_tree().current_scene.get_node("%RobotPlayer")
+		var player = get_tree().current_scene.get_node("StarviaPlayer")
+		var robot = get_tree().current_scene.get_node("RobotPlayer")
 		
 		if not player or not robot:
-			push_error("Cannot find Player obj or Robot obj! Do they have unique names in this scene?")
+			push_error("Cannot find Player obj or Robot obj! They need to be top level objects in the scene!")
 			return
 		
 		player.in_control = !player.in_control

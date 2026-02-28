@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bve8bah2s2squ"
-path="res://.godot/imported/wa_box_collision_tileset.png-25c5bf86dd9bef2804090b144fecc81d.ctex"
+path="res://.godot/imported/starvia_tileset.png-80483be2e432cf1e7d2b8e6bcba7007d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/starvia_world/wa_box_collision_tileset.png"
-dest_files=["res://.godot/imported/wa_box_collision_tileset.png-25c5bf86dd9bef2804090b144fecc81d.ctex"]
+source_file="res://assets/starvia_world/starvia_tileset.png"
+dest_files=["res://.godot/imported/starvia_tileset.png-80483be2e432cf1e7d2b8e6bcba7007d.ctex"]
 
 [params]
 
