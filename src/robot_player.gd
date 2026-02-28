@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = 400.0
+@onready var sprite: Sprite2D = $Sprite
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+const SPEED = 100.0
+const JUMP_VELOCITY = 300.0
 
 var in_control: bool = false
+
+func _ready() -> void:
+	animation_player.play("floaty")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not in_control:
