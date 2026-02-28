@@ -46,7 +46,7 @@ _data = {
 &"floaty": SubResource("Animation_04tsx")
 }
 
-[node name="RobotPlayer" type="CharacterBody2D" unique_id=1395355102]
+[node name="RobotPlayer" type="CharacterBody2D" unique_id=1395355102 groups=["Players"]]
 texture_filter = 1
 script = ExtResource("1_r5nbg")
 

@@ -6,7 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uxov2"]
 height = 52.0
 
-[node name="StarviaPlayer" type="CharacterBody2D" unique_id=1335828167]
+[node name="StarviaPlayer" type="CharacterBody2D" unique_id=1335828167 groups=["Players"]]
 texture_filter = 1
 script = ExtResource("1_ykyjo")
 
