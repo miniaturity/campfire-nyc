@@ -17,6 +17,14 @@ var coyote_frames: int = MAX_COYOTE_FRAMES
 var jump_buffer = 0
 
 func _ready() -> void:
+	animation_player.play(&"power_off")
+
+func play_sleep_anim():
+	animation_player.play(&"power_off")
+
+func play_wake_anim():
+	animation_player.play(&"power_off", -1, -1.0, true)
+	await animation_player.animation_finished
 	animation_player.play("floaty")
 
 func _flip_based_on_direction(direction: float):
