@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dve370rbj3a0k"
-path="res://.godot/imported/robot_tileset.png-0eac78f8826bb3c538df65d60d424f97.ctex"
+path="res://.godot/imported/robot_tileset.png-43066036ea61df1e92aaa13295e1815a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/robot_tileset.png"
-dest_files=["res://.godot/imported/robot_tileset.png-0eac78f8826bb3c538df65d60d424f97.ctex"]
+source_file="res://assets/robot_world/robot_tileset.png"
+dest_files=["res://.godot/imported/robot_tileset.png-43066036ea61df1e92aaa13295e1815a.ctex"]
 
 [params]
 
