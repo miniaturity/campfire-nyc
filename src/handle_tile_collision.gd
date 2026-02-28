@@ -16,13 +16,8 @@ func _on_body_entered(body):
 				# Handle different tile types
 				match tile_type:
 					2:
-						kill(body)
+						GameManager.kill(body)
 						pass
 					_:
 						pass
 						
-
-
-# TODO: Handle kill
-func kill(_player: CharacterBody2D):
-	pass

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ControlSwitchet="*uid://clhx6kogjdnaw"
+GameManager="*uid://cgrwydxnjg60m"
 
 [file_customization]
 

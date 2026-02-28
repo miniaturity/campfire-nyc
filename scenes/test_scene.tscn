@@ -16,7 +16,7 @@ position = Vector2(576, 368)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=394484667]
 shape = SubResource("RectangleShape2D_7ddre")
 
-[node name="Player" parent="." unique_id=1335828167 instance=ExtResource("1_j8ivh")]
+[node name="StarviaPlayer" parent="." unique_id=1335828167 instance=ExtResource("1_j8ivh")]
 unique_name_in_owner = true
 position = Vector2(576, 264)
 
