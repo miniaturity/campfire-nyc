@@ -7,6 +7,13 @@ enum TriggerType {
 	BOX 
 	}
 
+enum EffectType {
+	## Makes an object invisible, and disables its collision.
+	DISABLE,
+	## Makes an object visible, and enables its collision.
+	ENABLE
+}
+
 ## What color should the highlight of this button be?
 @export var button_color: Color = Color.WHITE
 ## How should this button be activated?
@@ -14,6 +21,12 @@ enum TriggerType {
 ## Is this button a "one and done" button?[br]
 ## [i]When this button is activated, it will stay activated forever.[/i]
 @export var one_shot: bool = true
+## What should this button do when activated?
+@export var effect_type: EffectType = EffectType.DISABLE
+## What is this button's target?
+@export var target: Node2D
+
+var active: bool = false
 
 @onready var button_highlight_sprite: Sprite2D = $ButtonHighlightSprite
 @onready var trigger_area: Area2D = $TriggerArea
@@ -22,7 +35,47 @@ enum TriggerType {
 func _ready() -> void:
 	button_highlight_sprite.self_modulate = button_color
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _on_trigger_area_body_entered(body: Node2D) -> void:
+	if trigger_type == TriggerType.PLAYER and not body.is_in_group(&"Players"):
+		return
+	if trigger_type == TriggerType.BOX and not body.is_in_group(&"Boxes"):
+		return
+	
+	if target == null:
+		push_error("This button has no target!")
+		return
+	
+	if effect_type == EffectType.DISABLE:
+		var tween = create_tween()
+		tween.tween_property(target, "modulate", Color(1,1,1,0), 0.5)
+		target.process_mode = Node.PROCESS_MODE_DISABLED
+	else:
+		var tween = create_tween()
+		tween.tween_property(target, "modulate", Color(1,1,1,1), 0.5)
+		target.process_mode = Node.PROCESS_MODE_INHERIT
+
+
+func _on_trigger_area_body_exited(body: Node2D) -> void:
+	if trigger_type == TriggerType.PLAYER and not body.is_in_group(&"Players"):
+		return
+	if trigger_type == TriggerType.BOX and not body.is_in_group(&"Boxes"):
+		return
+	if one_shot:
+		return
+	
+	if target == null:
+		push_error("This button has no target!")
+		return
+	
+	if effect_type == EffectType.ENABLE:
+		var tween = create_tween()
+		tween.tween_property(target, "modulate", Color(1,1,1,0), 0.5)
+		target.process_mode = Node.PROCESS_MODE_DISABLED
+	else:
+		var tween = create_tween()
+		tween.tween_property(target, "modulate", Color(1,1,1,1), 0.5)
+		target.process_mode = Node.PROCESS_MODE_INHERIT

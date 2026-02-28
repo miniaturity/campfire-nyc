@@ -28,3 +28,6 @@ polygon = PackedVector2Array(-8, 8, -5, 6, 5, 6, 8, 8)
 [node name="TriggerShape" type="CollisionShape2D" parent="TriggerArea" unique_id=2078122261]
 position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_8wdun")
+
+[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
+[connection signal="body_exited" from="TriggerArea" to="." method="_on_trigger_area_body_exited"]
