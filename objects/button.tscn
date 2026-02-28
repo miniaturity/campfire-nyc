@@ -9,6 +9,7 @@ size = Vector2(12, 21)
 
 [node name="Button" type="Node2D" unique_id=1238348574]
 texture_filter = 1
+scale = Vector2(2, 2)
 script = ExtResource("1_8wdun")
 
 [node name="BaseButtonSprite" type="Sprite2D" parent="." unique_id=1836633879]
