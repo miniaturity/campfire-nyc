@@ -16,7 +16,7 @@ func _on_body_entered(body):
 				# Handle different tile types
 				match tile_type:
 					2:
-						GameManager.kill(body)
+						GameManager.kill()
 						pass
 					_:
 						pass
