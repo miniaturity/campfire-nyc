@@ -1,3 +1,5 @@
+# I meant to call this "control_switcher" but I mistyped and now its "control_switchet"
+# let's keep it like that
 extends Node
 
 func _unhandled_input(event: InputEvent) -> void:
