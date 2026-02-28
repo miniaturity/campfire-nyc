@@ -1,1 +1,0 @@
-extends CollisionObject2D
