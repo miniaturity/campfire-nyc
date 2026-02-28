@@ -1,13 +1,16 @@
 [gd_scene format=4 uid="uid://chcrnlua4haam"]
 
+[ext_resource type="Script" uid="uid://cquu077xya2wx" path="res://scenes/SceneManager.gd" id="1_i6ie8"]
 [ext_resource type="TileSet" uid="uid://d2pd1k3fnvsyt" path="res://assets/starvia_world/starvia_tileset.tres" id="1_sd0if"]
 [ext_resource type="TileSet" uid="uid://cboxm6qc4clkn" path="res://assets/robot_world/robot_tileset.tres" id="2_bcp3k"]
 [ext_resource type="PackedScene" uid="uid://dy1ujdrd47cuw" path="res://objects/starvia_player.tscn" id="3_i6ie8"]
 [ext_resource type="PackedScene" uid="uid://cy7p2fjmypwn2" path="res://objects/robot_player.tscn" id="4_70sbq"]
 [ext_resource type="PackedScene" uid="uid://1sqg1tks871u" path="res://objects/button.tscn" id="5_bcp3k"]
+[ext_resource type="TileSet" uid="uid://cl44qg12ws4bf" path="res://assets/general_world/general_tileset.tres" id="7_70sbq"]
 
 [node name="AdriensTestScene" type="Node2D" unique_id=558223499]
 texture_filter = 1
+script = ExtResource("1_i6ie8")
 
 [node name="StarviaTiles" type="TileMapLayer" parent="." unique_id=1114080014]
 scale = Vector2(2, 2)
@@ -17,11 +20,6 @@ tile_set = ExtResource("1_sd0if")
 [node name="RobotTiles" type="TileMapLayer" parent="." unique_id=343408680]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAAA0AAAABAAMAAAABAA0AAAACAAMAAAACAA0AAAACAAMAAAADAA0AAAADAAIAAAADAAwAAAABAAAAAAAEAAwAAAADAAIAAAAEAAsAAAABAAAAAAAFAAsAAAACAAMAAAAGAAsAAAACAAMAAAAHAAsAAAACAAMAAAAIAAsAAAACAAMAAAAJAAsAAAACAAMAAAAKAAsAAAACAAMAAAALAAsAAAACAAMAAAAMAAsAAAACAAMAAAANAAsAAAACAAMAAAAOAAsAAAACAAMAAAAPAAsAAAACAAMAAAAQAAsAAAACAAMAAAARAAsAAAACAAMAAAASAAsAAAADAAIAAAATAAoAAAADAAIAAAATAAkAAAABAAAAAAAUAAkAAAADAAIAAAAUAAgAAAABAAAAAAAVAAcAAAABAAAAAAAWAAcAAAADAAIAAAAWAAYAAAABAAAAAAAXAAYAAAACAAMAAAAYAAYAAAACAAMAAAAZAAYAAAADAAIAAAAZAAUAAAABAAAAAAAaAAUAAAACAAMAAAAbAAUAAAACAAMAAAAcAAUAAAACAAMAAAAdAAUAAAACAAMAAAAeAAUAAAACAAMAAAAfAAUAAAACAAMAAAAgAAUAAAACAAMAAAAhAAUAAAACAAMAAAAiAAUAAAACAAMAAAAjAAUAAAACAAMAAAAkAAUAAAADAAMAAAAVAAgAAAADAAIAAAASAAoAAAABAAAAAAA=")
-tile_set = ExtResource("2_bcp3k")
-
-[node name="RobotTiles2" type="TileMapLayer" parent="." unique_id=450549044]
-scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAANAAwAAAADAAAAAAAMAAwAAAABAAAAAAAMAA0AAAABAAIAAAANAA0AAAADAAIAAAAKAA4AAAABAAAAAAAKAA8AAAABAAIAAAALAA8AAAADAAIAAAALAA4AAAADAAAAAAAOAA4AAAABAAAAAAAOAA8AAAABAAIAAAAPAA8AAAADAAIAAAAPAA4AAAADAAAAAAA=")
 tile_set = ExtResource("2_bcp3k")
 
 [node name="StarviaPlayer" parent="." unique_id=1335828167 instance=ExtResource("3_i6ie8")]
@@ -34,4 +32,8 @@ position = Vector2(22, 479)
 position = Vector2(216, 400)
 rotation = -3.1415927
 button_color = Color(1, 0, 0, 1)
-target = NodePath("../RobotTiles2")
+target = NodePath("../RobotPlayer")
+
+[node name="GenericTiles" type="TileMapLayer" parent="." unique_id=932760132]
+tile_map_data = PackedByteArray("AAANABMAAAAAAAAAAQAOABMAAAAAAAAAAQAPABMAAAAAAAAAAQAQABMAAAAAAAAAAQARABMAAAAAAAAAAQASABMAAAAAAAAAAQATABMAAAAAAAAAAQA=")
+tile_set = ExtResource("7_70sbq")
