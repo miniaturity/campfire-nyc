@@ -9,8 +9,12 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 const JUMP_VELOCITY = 300.0
+const MAX_COYOTE_FRAMES = 7
+const JUMP_BUFFER_TIMEOUT = 5
 
 var in_control: bool = false
+var coyote_frames: int = MAX_COYOTE_FRAMES
+var jump_buffer = 0
 
 func _ready() -> void:
 	animation_player.play("floaty")
@@ -33,8 +37,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not in_control:
 		return
 	
-	if event.is_action_pressed("jump") and is_on_ceiling():
+	if event.is_action_pressed("jump") and (is_on_ceiling() or coyote_frames > 0):
 		velocity.y = JUMP_VELOCITY
+		coyote_frames = 0
+	elif event.is_action_pressed("jump") and not is_on_ceiling():
+		jump_buffer = JUMP_BUFFER_TIMEOUT
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
 	_flip_based_on_direction(direction)
@@ -48,4 +55,18 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_ceiling():
 		velocity += -(get_gravity() * 0.9) * delta
+		coyote_frames -= 1
+		coyote_frames = clamp(coyote_frames, 0, 99)
+	if is_on_ceiling() and coyote_frames != MAX_COYOTE_FRAMES:
+		coyote_frames = MAX_COYOTE_FRAMES
+	
+	if is_on_ceiling() and jump_buffer > 0:
+		velocity.y = JUMP_VELOCITY
+		jump_buffer = 0
+	
+	if jump_buffer > 0:
+		jump_buffer -= 1
+	
+	if Input.get_axis("move_left", "move_right") == 0 or in_control == false:
+		velocity.x = 0
 	move_and_slide()
