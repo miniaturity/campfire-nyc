@@ -58,9 +58,6 @@ func _physics_process(delta: float) -> void:
 		if collision_block.is_in_group("Boxes") and abs(collision_block.get_linear_velocity().x) < BLOCK_MAX_VELOCITY:
 			collision_block.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
 
-		if collision_block.is_in_group("Laser") and collision_block.collision_mask != 4:
-			print("collision: " + str(collision_block.collision_mask))
-			GameManager.kill()
 	move_and_slide()
 
 func reached_goal():
