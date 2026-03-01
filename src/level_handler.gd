@@ -72,3 +72,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_action_pressed("switch_controls"): return
 	robot.in_control = not robot.in_control
 	starvia.in_control = not starvia.in_control
+	
+	if robot.in_control:
+		robot.play_wake_anim()
+	else:
+		robot.play_sleep_anim()
