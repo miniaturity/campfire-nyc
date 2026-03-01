@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ciij655t4a71r"]
+
+[ext_resource type="PackedScene" uid="uid://bypyfcxevj3b6" path="res://objects/darkening_ui.tscn" id="1_7gc2b"]
+
+[node name="AllLevelUi" type="CanvasLayer" unique_id=523024520]
+
+[node name="DarkeningUi" parent="." unique_id=485671579 instance=ExtResource("1_7gc2b")]
