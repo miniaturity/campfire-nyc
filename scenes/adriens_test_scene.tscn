@@ -9,6 +9,7 @@
 [ext_resource type="TileSet" uid="uid://cl44qg12ws4bf" path="res://assets/general_world/general_tileset.tres" id="7_70sbq"]
 [ext_resource type="PackedScene" uid="uid://dn316dm1lujuf" path="res://objects/skies.tscn" id="8_d3atu"]
 [ext_resource type="PackedScene" uid="uid://bl4051lw8ds5j" path="res://objects/level_camera.tscn" id="9_ioqdg"]
+[ext_resource type="PackedScene" uid="uid://ciij655t4a71r" path="res://objects/all_level_UI.tscn" id="10_k7n6a"]
 
 [node name="AdriensTestScene" type="Node2D" unique_id=558223499]
 texture_filter = 1
@@ -45,3 +46,5 @@ tile_set = ExtResource("7_70sbq")
 [node name="Skies" parent="." unique_id=219952505 instance=ExtResource("8_d3atu")]
 
 [node name="LevelCamera" parent="." unique_id=431855530 instance=ExtResource("9_ioqdg")]
+
+[node name="AllLevelUi" parent="." unique_id=523024520 instance=ExtResource("10_k7n6a")]

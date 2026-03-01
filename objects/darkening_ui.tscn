@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bypyfcxevj3b6"]
+
+[ext_resource type="Script" uid="uid://cw36npx3yjgts" path="res://src/darkening_ui.gd" id="1_ortmj"]
+
+[node name="DarkeningUi" type="Control" unique_id=485671579]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ortmj")
+
+[node name="TopHalf" type="ColorRect" parent="." unique_id=78694107]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 0.5
+color = Color(0, 0, 0, 0.49803922)
+metadata/_edit_use_anchors_ = true
+
+[node name="BottomHalf" type="ColorRect" parent="." unique_id=1809345151]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 324.0
+offset_bottom = 324.0
+color = Color(0, 0, 0, 0.49803922)
+metadata/_edit_use_anchors_ = true
