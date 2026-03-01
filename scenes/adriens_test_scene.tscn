@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cy7p2fjmypwn2" path="res://objects/robot_player.tscn" id="4_70sbq"]
 [ext_resource type="PackedScene" uid="uid://1sqg1tks871u" path="res://objects/button.tscn" id="5_bcp3k"]
 [ext_resource type="TileSet" uid="uid://cl44qg12ws4bf" path="res://assets/general_world/general_tileset.tres" id="7_70sbq"]
-[ext_resource type="PackedScene" uid="uid://kbcgpid4odan" path="res://objects/box.tscn" id="8_d3atu"]
 
 [node name="AdriensTestScene" type="Node2D" unique_id=558223499]
 texture_filter = 1
@@ -32,17 +31,11 @@ position = Vector2(22, 479)
 [node name="Button" parent="." unique_id=1238348574 node_paths=PackedStringArray("target") instance=ExtResource("5_bcp3k")]
 position = Vector2(216, 400)
 rotation = -3.1415927
-button_color = Color(1, 0, 0, 1)
 one_shot = false
-target = NodePath("../Box")
+button_color = Color(1, 0, 0, 1)
+trigger_type = 1
+target = NodePath("")
 
 [node name="GenericTiles" type="TileMapLayer" parent="." unique_id=932760132]
-tile_map_data = PackedByteArray("AAANABMAAAAAAAAAAQAOABMAAAAAAAAAAQAPABMAAAAAAAAAAQAQABMAAAAAAAAAAQARABMAAAAAAAAAAQASABMAAAAAAAAAAQATABMAAAAAAAAAAQAUABMAAAAAAAAAAQAVABMAAAAAAAAAAQAWABMAAAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAANABMAAAAAAAAAAQAOABMAAAAAAAAAAQAPABMAAAAAAAAAAQAQABMAAAAAAAAAAQARABMAAAAAAAAAAQASABMAAAAAAAAAAQATABMAAAAAAAAAAQAUABMAAAAAAAAAAQAVABMAAAAAAAAAAQAWABMAAAAAAAAAAQALABkAAAAAAAAAAwA=")
 tile_set = ExtResource("7_70sbq")
-
-[node name="Box" parent="." unique_id=935545329 instance=ExtResource("8_d3atu")]
-position = Vector2(153, 301)
-
-[node name="Box2" parent="." unique_id=680469160 instance=ExtResource("8_d3atu")]
-position = Vector2(181, 401)
-gravity_scale = -1.0
