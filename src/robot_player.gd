@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var hand_2: Sprite2D = $Body/Hand2
 @onready var head: Sprite2D = $Body/Head
 
-const SPEED = 100.0
+const SPEED = 150.0
 const JUMP_VELOCITY = 300.0
 const MAX_COYOTE_FRAMES = 7
 const JUMP_BUFFER_TIMEOUT = 5
