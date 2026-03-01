@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bg3ff4386rp42"]
+
+[ext_resource type="Shader" uid="uid://cb8vqiealjf5v" path="res://assets/shaders/crt.gdshader" id="1_wx4mf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cyulg"]
+shader = ExtResource("1_wx4mf")
+shader_parameter/resolution = Vector2(640, 360)
+shader_parameter/scan_line_amount = 0.5
+shader_parameter/warp_amount = 0.05
+shader_parameter/vignette_amount = 0.5
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/grille_amount = 0.05
+shader_parameter/brightness_boost = 1.2
+
+[node name="Shader" type="ColorRect" unique_id=106511936]
+material = SubResource("ShaderMaterial_cyulg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true

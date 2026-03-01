@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://ciij655t4a71r"]
 
 [ext_resource type="PackedScene" uid="uid://bypyfcxevj3b6" path="res://objects/darkening_ui.tscn" id="1_7gc2b"]
+[ext_resource type="PackedScene" uid="uid://bg3ff4386rp42" path="res://objects/shader.tscn" id="1_jlqxt"]
 
 [node name="AllLevelUi" type="CanvasLayer" unique_id=523024520]
+
+[node name="Shader" parent="." unique_id=106511936 instance=ExtResource("1_jlqxt")]
 
 [node name="DarkeningUi" parent="." unique_id=485671579 instance=ExtResource("1_7gc2b")]
