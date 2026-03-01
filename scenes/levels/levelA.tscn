@@ -1,22 +1,21 @@
-[gd_scene format=4 uid="uid://wli3ql3qi213"]
+[gd_scene format=4 uid="uid://cdceqfjjtx0f5"]
 
-[ext_resource type="Script" path="res://src/level_handler.gd" id="1_vey2w"]
+[ext_resource type="Script" uid="uid://dralvosae264y" path="res://src/level_handler.gd" id="1_vey2w"]
 [ext_resource type="PackedScene" uid="uid://ciij655t4a71r" path="res://objects/all_level_UI.tscn" id="2_4sjx1"]
-[ext_resource type="PackedScene" path="res://objects/level_camera.tscn" id="3_1dn6v"]
-[ext_resource type="PackedScene" path="res://objects/skies.tscn" id="4_dtyb5"]
+[ext_resource type="PackedScene" uid="uid://bl4051lw8ds5j" path="res://objects/level_camera.tscn" id="3_1dn6v"]
+[ext_resource type="PackedScene" uid="uid://dn316dm1lujuf" path="res://objects/skies.tscn" id="4_dtyb5"]
 [ext_resource type="TileSet" uid="uid://d2pd1k3fnvsyt" path="res://assets/starvia_world/starvia_tileset.tres" id="5_vxper"]
 [ext_resource type="TileSet" uid="uid://cboxm6qc4clkn" path="res://assets/robot_world/robot_tileset.tres" id="6_ocpph"]
 [ext_resource type="PackedScene" uid="uid://cy7p2fjmypwn2" path="res://objects/robot_player.tscn" id="7_ui0o5"]
 [ext_resource type="PackedScene" uid="uid://dy1ujdrd47cuw" path="res://objects/starvia_player.tscn" id="8_mx3nb"]
 [ext_resource type="TileSet" uid="uid://cl44qg12ws4bf" path="res://assets/general_world/general_tileset.tres" id="9_w55em"]
-[ext_resource type="PackedScene" path="res://objects/goal.tscn" id="10_hiim0"]
+[ext_resource type="PackedScene" uid="uid://c4vbkmbi7ev86" path="res://objects/goal.tscn" id="10_hiim0"]
 [ext_resource type="PackedScene" uid="uid://c88ckjrucbt4m" path="res://objects/laser.tscn" id="11_4sjx1"]
 [ext_resource type="PackedScene" uid="uid://1sqg1tks871u" path="res://objects/button.tscn" id="12_1dn6v"]
 
 [node name="Level2" type="Node2D" unique_id=1116204900]
 texture_filter = 1
 script = ExtResource("1_vey2w")
-next_scene = null
 
 [node name="AllLevelUi" parent="." unique_id=523024520 instance=ExtResource("2_4sjx1")]
 visible = false
@@ -49,15 +48,12 @@ scale = Vector2(1.2, 1.2)
 tile_map_data = PackedByteArray("AAAKAA0AAAAAAAAAAgA=")
 tile_set = ExtResource("9_w55em")
 
-[node name="Laser" parent="." unique_id=1005822320 node_paths=PackedStringArray("other") instance=ExtResource("11_4sjx1")]
+[node name="Laser" parent="." unique_id=1005822320 instance=ExtResource("11_4sjx1")]
 position = Vector2(238.00002, 138.00002)
 rotation = 3.1347265
-other = NodePath("../Laser2")
 
-[node name="Laser2" parent="." unique_id=1989792054 node_paths=PackedStringArray("other") instance=ExtResource("11_4sjx1")]
+[node name="Laser2" parent="." unique_id=1989792054 instance=ExtResource("11_4sjx1")]
 position = Vector2(246, 505)
-start = false
-other = NodePath("../Laser")
 
 [node name="Button" parent="." unique_id=1238348574 node_paths=PackedStringArray("target") instance=ExtResource("12_1dn6v")]
 position = Vector2(220, 496)
@@ -66,7 +62,6 @@ target = NodePath("../Laser")
 
 [node name="Laser4" parent="." unique_id=1315935404 instance=ExtResource("11_4sjx1")]
 position = Vector2(466, 744)
-start = false
 
 [node name="Goal3" parent="." unique_id=230188500 instance=ExtResource("10_hiim0")]
 position = Vector2(585, 262)
