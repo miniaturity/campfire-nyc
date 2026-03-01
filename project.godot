@@ -23,7 +23,6 @@ boot_splash/minimum_display_time=200
 
 [autoload]
 
-ControlSwitchet="uid://clhx6kogjdnaw"
 GameManager="*uid://cgrwydxnjg60m"
 
 [editor_plugins]
