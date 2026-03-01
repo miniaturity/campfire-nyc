@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://plv4xxab1wjp"]
 
 [ext_resource type="Texture2D" uid="uid://wi5j3e2psdqr" path="res://assets/logo.png" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://b80ewlody0h3n" path="res://assets/fonts/TheWall.ttf" id="2_bqqt6"]
+[ext_resource type="FontFile" uid="uid://bqmgwdmhwcpty" path="res://assets/fonts/ChiKareGo.ttf" id="3_wu84c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
+font = ExtResource("2_bqqt6")
+font_size = 48
 
 [node name="MainMenu" type="Control" unique_id=1123790851]
 texture_filter = 1
@@ -28,3 +34,35 @@ offset_right = 576.0
 offset_bottom = 192.0
 scale = Vector2(4, 4)
 texture = ExtResource("1_l6cm7")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=4300224]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=318139190]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1582930849]
+layout_mode = 2
+text = "SPLIT
+REALITY"
+label_settings = SubResource("LabelSettings_8ln24")
+autowrap_mode = 2
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=801506766]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="PlayButton2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=838011341]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 32
+text = "Play"
