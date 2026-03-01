@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var line_2d = $Line2D
 @onready var raycast = $StaticBody2D/RayCast2D
-@onready var collision = $StaticBody2D/CollisionShape2D
+@onready var collision = $StaticBody2D
 
 ## Whether it is a start or endpoint
 ## Prevents drawing laser twice
@@ -52,11 +52,13 @@ func _physics_process(_delta: float) -> void:
 	
 	if !active:
 		raycast.enabled = false
-		collision.disabled = true
+		if collision.collision_layer != 4:
+			collision.collision_layer = 4
 		line_2d.self_modulate.a = 0
 	else:
 		raycast.enabled = true
-		collision.disabled = false
+		if collision.collision_layer != 2:
+			collision.collision_layer = 2
 		line_2d.self_modulate.a = 1
 		
 		if raycast.is_colliding():
