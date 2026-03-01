@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dralvosae264y" path="res://src/level_handler.gd" id="1_gycjm"]
 [ext_resource type="PackedScene" uid="uid://ciij655t4a71r" path="res://objects/all_level_UI.tscn" id="2_8i1lk"]
+[ext_resource type="PackedScene" path="res://scenes/levels/Final.tscn" id="2_hgky1"]
 [ext_resource type="PackedScene" uid="uid://bl4051lw8ds5j" path="res://objects/level_camera.tscn" id="3_hgky1"]
 [ext_resource type="PackedScene" uid="uid://dn316dm1lujuf" path="res://objects/skies.tscn" id="4_b4tpv"]
 [ext_resource type="TileSet" uid="uid://d2pd1k3fnvsyt" path="res://assets/starvia_world/starvia_tileset.tres" id="5_hkuam"]
@@ -16,6 +17,7 @@
 [node name="Level2" type="Node2D" unique_id=1116204900]
 texture_filter = 1
 script = ExtResource("1_gycjm")
+next_scene = ExtResource("2_hgky1")
 
 [node name="AllLevelUi" parent="." unique_id=523024520 instance=ExtResource("2_8i1lk")]
 visible = false
