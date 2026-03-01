@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dn316dm1lujuf"]
+
+[ext_resource type="Texture2D" uid="uid://c8fwwav1q0hm8" path="res://assets/starvia_world/sky/bg.png" id="1_emcj4"]
+[ext_resource type="Texture2D" uid="uid://ddllx0ihhrxv2" path="res://assets/starvia_world/sky/backCity.png" id="2_pfy7j"]
+[ext_resource type="Texture2D" uid="uid://0lthqhr1th60" path="res://assets/starvia_world/sky/backGrounds.png" id="3_7qwic"]
+[ext_resource type="Texture2D" uid="uid://bdvt6t067gotx" path="res://assets/starvia_world/sky/frontCity.png" id="4_sbi73"]
+[ext_resource type="Texture2D" uid="uid://55s45hyeck6g" path="res://assets/starvia_world/sky/frontGrounds.png" id="5_5x04w"]
+
+[node name="Skies" type="Node2D" unique_id=219952505]
+modulate = Color(0.72, 0.72, 0.72, 1)
+z_index = -1
+
+[node name="Starvia" type="Node2D" parent="." unique_id=951554770]
+scale = Vector2(1.28, 0.6)
+
+[node name="BG" type="Parallax2D" parent="Starvia" unique_id=1700383127]
+repeat_size = Vector2(900, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Starvia/BG" unique_id=821182429]
+texture = ExtResource("1_emcj4")
+centered = false
+
+[node name="BackCity" type="Parallax2D" parent="Starvia" unique_id=500077829]
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(900, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Starvia/BackCity" unique_id=75961795]
+texture = ExtResource("2_pfy7j")
+centered = false
+
+[node name="BackGrounds" type="Parallax2D" parent="Starvia" unique_id=580011776]
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(900, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Starvia/BackGrounds" unique_id=2035006362]
+texture = ExtResource("3_7qwic")
+centered = false
+
+[node name="FrontCity" type="Parallax2D" parent="Starvia" unique_id=86926462]
+scroll_scale = Vector2(0.9, 1)
+repeat_size = Vector2(900, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Starvia/FrontCity" unique_id=240255766]
+texture = ExtResource("4_sbi73")
+centered = false
+
+[node name="FrontGrounds" type="Parallax2D" parent="Starvia" unique_id=1449662354]
+scroll_scale = Vector2(1.03, 1)
+repeat_size = Vector2(900, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Starvia/FrontGrounds" unique_id=698280164]
+texture = ExtResource("5_5x04w")
+centered = false
+
+[node name="Robot" type="Node2D" parent="." unique_id=1439172005]
