@@ -34,9 +34,43 @@ func _ready() -> void:
 	line_2d.add_point(raycast.target_position)
 
 func _physics_process(_delta: float) -> void:
-	if not active: return
-	line_2d.set_point_position(1, raycast.target_position)
-	if not raycast.is_colliding(): return
+	if line_2d.points.size() != 2 || line_2d.points[1] == Vector2(0, 0) || !blockable: return
+	
+	if !other:
+		if !active:
+			if collision.collision_layer != 4:
+				collision.collision_layer = 4
+		else:
+			if collision.collision_layer != 2:
+				collision.collision_layer = 2
+		return
+	
+	if !other:
+		if !active:
+			if collision.collision_layer != 4:
+				collision.collision_layer = 4
+		else:
+			if collision.collision_layer != 2:
+				collision.collision_layer = 2
+		return
+	
+	if !other:
+		if !active:
+			if collision.collision_layer != 4:
+				collision.collision_layer = 4
+		else:
+			if collision.collision_layer != 2:
+				collision.collision_layer = 2
+		return
+	
+	if !other:
+		if !active:
+			if collision.collision_layer != 4:
+				collision.collision_layer = 4
+		else:
+			if collision.collision_layer != 2:
+				collision.collision_layer = 2
+		return
 	
 	var collider = raycast.get_collider()
 	line_2d.set_point_position(1, to_local(raycast.get_collision_point()))
