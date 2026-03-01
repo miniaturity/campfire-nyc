@@ -4,6 +4,8 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const MAX_COYOTE_FRAMES = 7
 const JUMP_BUFFER_TIMEOUT = 5
+const PUSH_FORCE = 100
+const BLOCK_MAX_VELOCITY = 180
 
 var in_control: bool = true
 var coyote_frames: int = MAX_COYOTE_FRAMES
@@ -43,27 +45,9 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.get_axis("move_left", "move_right") == 0 or in_control == false:
 		velocity.x = 0
-	move_and_slide()
-	check_tile_collision_data()
-	
-func check_tile_collision_data():
-	for i in range(get_slide_collision_count()):
+	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		var collider = collision.get_collider()
-		
-		if collider is TileMapLayer:
-			var c_point = collision.get_position()
-			var local_point = GameManager.starvia_tile_map.to_local(c_point)
-			var t_coords = GameManager.starvia_tile_map.local_to_map(local_point)
-			var t_data = GameManager.starvia_tile_map.get_cell_tile_data(t_coords)
-
-			if t_data != null:
-				match (t_data.get_custom_data("TileType")):
-					null:
-						pass
-					2:
-						GameManager.kill()
-						pass
-					_:
-						pass
-			
+		var collision_block = collision.get_collider()
+		if collision_block.is_in_group("Boxes") and abs(collision_block.get_linear_velocity().x) < BLOCK_MAX_VELOCITY:
+			collision_block.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
+	move_and_slide()
