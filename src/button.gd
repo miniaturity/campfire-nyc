@@ -66,65 +66,40 @@ func _ready() -> void:
 		if effect_type == EffectType.ENABLE:
 			_disable_target(target, false)
 		
-		if effect_type == EffectType.DISABLE:
-			_enable_target(target, false)
 	
-<<<<<<< Updated upstream
-	if effect_type == EffectType.ENABLE:
-		_disable_target(false)
-	
-	if effect_type == EffectType.ENABLE:
-		_enable_target(false)
-
-func _enable_target(do_tween: bool = true):
-=======
 	if tile_mode:
-		if tile_effect == EffectType.DISABLE:
-			enable_tile_targets()
-		
 		if tile_effect == EffectType.ENABLE:
 			disable_tile_targets()
 
+
 func _enable_target(e_target: Node2D, do_tween: bool = true):
 	if !e_target: return
->>>>>>> Stashed changes
 	var tween = create_tween()
 	if do_tween:
 		tween.tween_property(e_target, "modulate", Color(1,1,1,1), 0.5)
 	else:
-<<<<<<< Updated upstream
 		target.modulate = Color(1,1,1,1)
 	target.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	if target is TileMapLayer:
 		target.collision_enabled = false
 
-func _disable_target(do_tween: bool = true):
-=======
-		e_target.modulate = Color(1,1,1,1)
-	e_target.process_mode = Node.PROCESS_MODE_INHERIT
+
 
 func _disable_target(e_target: Node2D, do_tween: bool = true):
 	if !e_target: return
->>>>>>> Stashed changes
 	var tween = create_tween()
 	if do_tween:
 		tween.tween_property(e_target, "modulate", Color(1,1,1,0), 0.5)
 	else:
-<<<<<<< Updated upstream
 		target.modulate = Color(1,1,1,0)
 	target.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	if target is TileMapLayer:
 		target.collision_enabled = false
-=======
 		e_target.modulate = Color(1,1,1,0)
 	e_target.process_mode = Node.PROCESS_MODE_DISABLED
->>>>>>> Stashed changes
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if trigger_type == TriggerType.PLAYER and not body.is_in_group(&"Players"):
@@ -142,12 +117,6 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 	
 	button_highlight_sprite.frame = 1
 	
-<<<<<<< Updated upstream
-	if effect_type == EffectType.DISABLE:
-		_disable_target()
-	else:
-		_enable_target()
-=======
 	if object_mode:
 		if effect_type == EffectType.DISABLE:
 			_disable_target(target)
@@ -160,7 +129,6 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 		else:
 			enable_tile_targets()
 	
->>>>>>> Stashed changes
 
 
 func _on_trigger_area_body_exited(body: Node2D) -> void:
@@ -180,13 +148,7 @@ func _on_trigger_area_body_exited(body: Node2D) -> void:
 		return
 	
 	button_highlight_sprite.frame = 0
-	
-<<<<<<< Updated upstream
-	if effect_type == EffectType.ENABLE:
-		_disable_target()
-	else:
-		_enable_target()
-=======
+
 	if object_mode:
 		if effect_type == EffectType.ENABLE:
 			_disable_target(target)
@@ -220,4 +182,3 @@ func enable_tile_targets():
 		tile_map_layer.set_cell(cached_tile.tile_pos, cached_tile.source_id, cached_tile.atlas_coords, cached_tile.alternative_id)
 	tile_targets_cache = []
 	
->>>>>>> Stashed changes

@@ -41,10 +41,5 @@ position = Vector2(0, 1)
 points = PackedVector2Array(-39, 352, 1189, 352)
 default_color = Color(0, 0, 0, 1)
 
-[node name="Button" parent="." unique_id=1238348574 node_paths=PackedStringArray("tile_map_layer") instance=ExtResource("6_hu0vc")]
+[node name="Button" parent="." unique_id=1238348574 instance=ExtResource("6_hu0vc")]
 position = Vector2(301, 305)
-one_shot = false
-object_mode = false
-tile_mode = true
-tile_map_layer = NodePath("../StarviaTileMapLayer")
-tile_targets = Array[Vector2i]([Vector2i(4, 7), Vector2i(4, 6), Vector2i(4, 5), Vector2i(4, 4)])
