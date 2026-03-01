@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Campfire NYC"
-run/main_scene="uid://cbfuu1cl308vr"
+run/main_scene="uid://dp0vgb7hb13cr"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -86,3 +86,4 @@ jump={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

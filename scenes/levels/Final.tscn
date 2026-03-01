@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dp0vgb7hb13cr"]
+
+[ext_resource type="Script" uid="uid://bxxc75hwku63d" path="res://scenes/levels/final.gd" id="1_j3ipu"]
+[ext_resource type="Texture2D" uid="uid://c26nvvutmlh45" path="res://assets/general_world/final_0.png" id="1_srast"]
+[ext_resource type="Texture2D" uid="uid://grlu3stb6g23" path="res://assets/general_world/final_1.png" id="3_lrtgh"]
+[ext_resource type="Texture2D" uid="uid://c0oqmp7slmiau" path="res://assets/general_world/final_2.png" id="4_ly18l"]
+
+[node name="Final" type="Node2D" unique_id=692915482]
+script = ExtResource("1_j3ipu")
+images = Array[Texture2D]([ExtResource("1_srast"), ExtResource("3_lrtgh"), ExtResource("4_ly18l")])
+delay = 3.0
+fade_duration = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1235041225]
