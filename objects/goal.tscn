@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c4vbkmbi7ev86"]
+
+[ext_resource type="Script" uid="uid://kdru536ptmpt" path="res://src/goal.gd" id="1_c3dbx"]
+[ext_resource type="Texture2D" uid="uid://ymuvbytakhc2" path="res://assets/goal.png" id="1_i726j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3dbx"]
+atlas = ExtResource("1_i726j")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44lh3"]
+atlas = ExtResource("1_i726j")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8lag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3dbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44lh3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i726j"]
+radius = 16.0
+
+[node name="Goal" type="Node2D" unique_id=230188500]
+texture_filter = 1
+script = ExtResource("1_c3dbx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2079386366]
+sprite_frames = SubResource("SpriteFrames_t8lag")
+frame_progress = 0.8838453
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2116171607]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=794406491]
+shape = SubResource("CircleShape2D_i726j")
+debug_color = Color(0.2808839, 0.6315543, 0, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
