@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var hand_1: Sprite2D = $Body/Hand1
 @onready var hand_2: Sprite2D = $Body/Hand2
 @onready var head: Sprite2D = $Body/Head
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = 300.0
@@ -13,6 +14,8 @@ const MAX_COYOTE_FRAMES = 7
 const JUMP_BUFFER_TIMEOUT = 5
 const PUSH_FORCE = 100
 const BLOCK_MAX_VELOCITY = 180
+
+signal goal_reached
 
 var in_control: bool = false
 var coyote_frames: int = MAX_COYOTE_FRAMES
@@ -91,3 +94,13 @@ func _physics_process(delta: float) -> void:
 			GameManager.kill()
 	
 	move_and_slide()
+
+func reached_goal():
+	goal_reached.emit()
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(1,1,1,0), 1)
+	tween.play()
+	animated_sprite_2d.play()
+	in_control = false
+	await animated_sprite_2d.animation_finished
+	queue_free()
