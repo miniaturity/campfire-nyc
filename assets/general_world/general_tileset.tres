@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3hcgm7wiccnk" path="res://objects/spike.tscn" id="1_ekk5a"]
 [ext_resource type="PackedScene" uid="uid://kbcgpid4odan" path="res://objects/box.tscn" id="2_5tcpg"]
-[ext_resource type="PackedScene" path="res://objects/reverse_grav_box.tscn" id="3_5dd4c"]
+[ext_resource type="PackedScene" uid="uid://y4kbhkwmojs4" path="res://objects/reverse_grav_box.tscn" id="3_5dd4c"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_5tcpg"]
 scenes/1/scene = ExtResource("1_ekk5a")
