@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const MAX_COYOTE_FRAMES = 7
@@ -63,4 +65,10 @@ func _physics_process(delta: float) -> void:
 
 func reached_goal():
 	goal_reached.emit()
-	pass
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color(1,1,1,0), 1)
+	tween.play()
+	animated_sprite_2d.play()
+	in_control = false
+	await animated_sprite_2d.animation_finished
+	queue_free()
