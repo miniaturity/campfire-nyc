@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://c88ckjrucbt4m"]
 
 [ext_resource type="Script" uid="uid://b60jbv8l1qkir" path="res://src/laser.gd" id="1_jrugt"]
-[ext_resource type="Script" uid="uid://dvq2gttl8ba74" path="res://src/laser_line.gd" id="2_3xrv4"]
 [ext_resource type="Texture2D" uid="uid://cjmhtlemip0gm" path="res://assets/laser.png" id="2_e6e0a"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_e6e0a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xrv4"]
+size = Vector2(18, 16)
 
 [node name="Laser" type="Node2D" unique_id=1005822320]
+texture_filter = 1
 script = ExtResource("1_jrugt")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1710451724]
+target_position = Vector2(0, -50)
+collision_mask = 3
 
 [node name="LaserBox" type="Sprite2D" parent="." unique_id=1056373303]
 texture = ExtResource("2_e6e0a")
@@ -15,7 +20,6 @@ texture = ExtResource("2_e6e0a")
 [node name="Line2D" type="Line2D" parent="." unique_id=860701348]
 width = 1.0
 default_color = Color(1, 0, 0, 1)
-script = ExtResource("2_3xrv4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=47818721 groups=["Laser"]]
 collision_layer = 2

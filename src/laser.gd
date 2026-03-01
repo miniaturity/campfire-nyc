@@ -18,37 +18,38 @@ extends Node2D
 ## Whether it can be blocked by boxes or not.
 @export var blockable: bool = true
 
+## The length of the laser.
+@export var laser_length: float = 1000.0
+
 ## Laser color
 @export var color: Color = Color(255, 0, 0)
 
-var end_pos: Vector2
-
 func disable():
 	active = false
+	raycast.enabled = false
+	line_2d.visible = false
 
 func enable():
 	active = true
+	raycast.enabled = true
+	line_2d.visible = true
 
 func _ready() -> void:
-	# Dont need to do anything if its the endpoint.
-	if !start: 
-		return
-	if !other:
-		push_error("A laser point was not connected!")
-		return
-		
-	if other.start:
-		push_error("Duplicate starting points for a laser!")
-		return
-	
 	line_2d.default_color = color
-	line_2d.points = [Vector2(0, 0), to_local(other.global_position)]
-	if blockable:
-		raycast.target_position = to_local(other.global_position)
+	raycast.target_position = Vector2.UP * laser_length
+	raycast.enabled = true
+	line_2d.add_point(Vector2(0,0))
+	line_2d.add_point(raycast.target_position)
 
-	
 func _physics_process(_delta: float) -> void:
-	if !start || line_2d.points[1] == Vector2(0, 0) || !blockable: return
+	if not active: return
+	line_2d.set_point_position(1, raycast.target_position)
+	if not raycast.is_colliding(): return
+	
+	var collider = raycast.get_collider()
+	if not (collider is Node2D): return
+	collider = collider as Node2D
+	line_2d.set_point_position(1, to_local(raycast.get_collision_point()))
 	
 	if !active:
 		raycast.enabled = false
