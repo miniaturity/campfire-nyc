@@ -38,8 +38,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if !start || !active: return
-	var start_pos = global_position
-	var end_pos = other.global_position
+	var start_pos = to_local(global_position)
+	var end_pos = to_local(other.global_position)
 	
 	print("StartPos: " + str(start_pos))
 	print("EndPos: " + str(end_pos))

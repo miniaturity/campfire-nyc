@@ -13,10 +13,11 @@ script = ExtResource("1_jrugt")
 texture = ExtResource("2_e6e0a")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=860701348]
+width = 1.0
 default_color = Color(1, 0, 0, 1)
 script = ExtResource("2_3xrv4")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=47818721]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=47818721 groups=["Laser"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=692398561]
 shape = SubResource("SegmentShape2D_e6e0a")
