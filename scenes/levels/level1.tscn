@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://cbfuu1cl308vr"]
 
-[ext_resource type="Script" path="res://src/level_handler.gd" id="1_nkeig"]
+[ext_resource type="Script" uid="uid://dralvosae264y" path="res://src/level_handler.gd" id="1_nkeig"]
+[ext_resource type="PackedScene" uid="uid://d0lju8wlkul2t" path="res://scenes/levels/levelA.tscn" id="2_lgguw"]
 [ext_resource type="PackedScene" uid="uid://ciij655t4a71r" path="res://objects/all_level_UI.tscn" id="2_nfihu"]
-[ext_resource type="PackedScene" path="res://objects/level_camera.tscn" id="3_lgguw"]
-[ext_resource type="PackedScene" path="res://objects/skies.tscn" id="4_jprdt"]
+[ext_resource type="PackedScene" uid="uid://bl4051lw8ds5j" path="res://objects/level_camera.tscn" id="3_lgguw"]
+[ext_resource type="PackedScene" uid="uid://dn316dm1lujuf" path="res://objects/skies.tscn" id="4_jprdt"]
 [ext_resource type="TileSet" uid="uid://d2pd1k3fnvsyt" path="res://assets/starvia_world/starvia_tileset.tres" id="5_ps2vj"]
 [ext_resource type="PackedScene" uid="uid://1sqg1tks871u" path="res://objects/button.tscn" id="6_sbmf2"]
 [ext_resource type="TileSet" uid="uid://cboxm6qc4clkn" path="res://assets/robot_world/robot_tileset.tres" id="7_1xax6"]
@@ -11,10 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://dy1ujdrd47cuw" path="res://objects/starvia_player.tscn" id="9_4fww7"]
 [ext_resource type="PackedScene" uid="uid://c88ckjrucbt4m" path="res://objects/laser.tscn" id="10_5ntmo"]
 [ext_resource type="TileSet" uid="uid://cl44qg12ws4bf" path="res://assets/general_world/general_tileset.tres" id="10_gvm5i"]
-[ext_resource type="PackedScene" path="res://objects/goal.tscn" id="11_jrfo0"]
+[ext_resource type="PackedScene" uid="uid://c4vbkmbi7ev86" path="res://objects/goal.tscn" id="11_jrfo0"]
 
 [node name="Level1" type="Node2D" unique_id=1581159585]
 script = ExtResource("1_nkeig")
+next_scene = ExtResource("2_lgguw")
 
 [node name="AllLevelUi" parent="." unique_id=523024520 instance=ExtResource("2_nfihu")]
 
@@ -51,39 +53,30 @@ tile_set = ExtResource("10_gvm5i")
 
 [node name="Lasers" type="Node" parent="." unique_id=1984817970]
 
-[node name="Laser" parent="Lasers" unique_id=1005822320 node_paths=PackedStringArray("other") instance=ExtResource("10_5ntmo")]
+[node name="Laser" parent="Lasers" unique_id=1005822320 instance=ExtResource("10_5ntmo")]
 position = Vector2(232, 280)
 rotation = 1.5707964
-other = NodePath("../Laser2")
 
-[node name="Laser2" parent="Lasers" unique_id=1514599045 node_paths=PackedStringArray("other") instance=ExtResource("10_5ntmo")]
+[node name="Laser2" parent="Lasers" unique_id=1514599045 instance=ExtResource("10_5ntmo")]
 position = Vector2(408, 280)
 rotation = -1.5707964
-start = false
-other = NodePath("../Laser")
 
-[node name="Laser3" parent="Lasers" unique_id=1726420608 node_paths=PackedStringArray("other") instance=ExtResource("10_5ntmo")]
+[node name="Laser3" parent="Lasers" unique_id=1726420608 instance=ExtResource("10_5ntmo")]
 position = Vector2(232, 360)
 rotation = 1.5707964
-other = NodePath("../Laser4")
 color = Color(0, 255.0139, 255.0139, 1)
 
-[node name="Laser4" parent="Lasers" unique_id=1845701039 node_paths=PackedStringArray("other") instance=ExtResource("10_5ntmo")]
+[node name="Laser4" parent="Lasers" unique_id=1845701039 instance=ExtResource("10_5ntmo")]
 position = Vector2(568, 360)
 rotation = -1.5707964
-start = false
-other = NodePath("../Laser3")
 
-[node name="Laser5" parent="Lasers" unique_id=425492527 node_paths=PackedStringArray("other") instance=ExtResource("10_5ntmo")]
+[node name="Laser5" parent="Lasers" unique_id=425492527 instance=ExtResource("10_5ntmo")]
 position = Vector2(528, 248)
-other = NodePath("../Laser6")
 color = Color(0, 255.0139, 0, 1)
 
-[node name="Laser6" parent="Lasers" unique_id=1328542569 node_paths=PackedStringArray("other") instance=ExtResource("10_5ntmo")]
+[node name="Laser6" parent="Lasers" unique_id=1328542569 instance=ExtResource("10_5ntmo")]
 position = Vector2(528, 136)
 rotation = 3.1415927
-start = false
-other = NodePath("../Laser5")
 color = Color(0, 255.0139, 0, 1)
 
 [node name="Buttons" type="Node" parent="." unique_id=1095408332]
