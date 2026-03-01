@@ -17,13 +17,10 @@
 script = ExtResource("1_nkeig")
 
 [node name="AllLevelUi" parent="." unique_id=523024520 instance=ExtResource("2_nfihu")]
-visible = false
 
 [node name="LevelCamera" parent="." unique_id=431855530 instance=ExtResource("3_lgguw")]
-visible = false
 
 [node name="Skies" parent="." unique_id=219952505 instance=ExtResource("4_jprdt")]
-visible = false
 
 [node name="StarviaTileMapLayer" type="TileMapLayer" parent="." unique_id=1289699298]
 scale = Vector2(2, 2)
