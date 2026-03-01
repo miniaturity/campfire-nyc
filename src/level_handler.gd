@@ -1,8 +1,14 @@
 extends Node2D
 
+## Points to the next scene when the level is completed.
+## This is required!! It doesn't need to be a level.
 @export var next_scene: PackedScene
 
+## Points to the Robot. 
+## Not required, but speeds up load time since the level no longer needs to look for it.
 @export var robot: CharacterBody2D
+## Points to Starvia.
+##  Not required, but speeds up load time since the level no longer needs to look for it.
 @export var starvia: CharacterBody2D
 
 var dirty: bool = false
