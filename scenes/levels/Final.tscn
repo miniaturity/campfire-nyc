@@ -8,7 +8,7 @@
 [node name="Final" type="Node2D" unique_id=692915482]
 script = ExtResource("1_j3ipu")
 images = Array[Texture2D]([ExtResource("1_srast"), ExtResource("3_lrtgh"), ExtResource("4_ly18l")])
-delay = 3.0
+delay = 2.0
 fade_duration = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1235041225]
