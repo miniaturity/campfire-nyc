@@ -25,7 +25,6 @@ boot_splash/minimum_display_time=200
 
 ControlSwitchet="uid://clhx6kogjdnaw"
 GameManager="*uid://cgrwydxnjg60m"
-CameraController="*uid://cqvndy51xhwsv"
 
 [editor_plugins]
 
