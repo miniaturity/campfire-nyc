@@ -28,7 +28,7 @@ func _make_appear(target: ColorRect):
 	var tween = create_tween()
 	tween.tween_property(target, "modulate", Color(1,1,1,1), 0.5)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not starvia or not robot:
 		return
 	
