@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Campfire NYC"
-run/main_scene="uid://dp0vgb7hb13cr"
+run/main_scene="uid://plv4xxab1wjp"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
