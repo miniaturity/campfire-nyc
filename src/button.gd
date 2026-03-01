@@ -53,6 +53,14 @@ class CachedTile:
 @export var tile_targets: Array[Vector2i]
 var tile_targets_cache: Array[CachedTile]
 
+@export_group("Laser")
+## Whether the button affects lasers or not.
+@export var laser_mode: bool = false
+## What should this button do while active (Laser)
+@export var laser_effect: EffectType = EffectType.DISABLE
+## Connected Laser
+@export var target_lasers: Array[Laser]
+
 var active: bool = false
 
 @onready var button_highlight_sprite: Sprite2D = $ButtonHighlightSprite
@@ -66,11 +74,21 @@ func _ready() -> void:
 		if effect_type == EffectType.ENABLE:
 			_disable_target(target, false)
 		
-	
 	if tile_mode:
 		if tile_effect == EffectType.ENABLE:
 			disable_tile_targets()
+	
+	if laser_mode:
+		if laser_effect == EffectType.ENABLE:
+			disable_lasers()
 
+func disable_lasers():
+	for laser in target_lasers:
+		laser.disable()
+
+func enable_lasers():
+	for laser in target_lasers:
+		laser.enable()
 
 func _enable_target(e_target: Node2D, do_tween: bool = true):
 	if !e_target: return
@@ -129,6 +147,12 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 		else:
 			enable_tile_targets()
 	
+	if laser_mode:
+		if laser_effect == EffectType.DISABLE:
+			disable_lasers()
+		else:
+			enable_lasers()
+	
 
 
 func _on_trigger_area_body_exited(body: Node2D) -> void:
@@ -143,8 +167,12 @@ func _on_trigger_area_body_exited(body: Node2D) -> void:
 		push_error("This button has no target!")
 		return
 	
-	if tile_mode and tile_effect == null:
-		push_error("This button has no tile target!")
+	if tile_mode and tile_targets.size() == 0:
+		push_error("This button has no tile targets!")
+		return
+	
+	if laser_mode and target_lasers.size() == 0:
+		push_error("This button has no laser targets!")
 		return
 	
 	button_highlight_sprite.frame = 0
@@ -160,8 +188,12 @@ func _on_trigger_area_body_exited(body: Node2D) -> void:
 			disable_tile_targets()
 		else:
 			enable_tile_targets()
-		
-			
+	
+	if laser_mode:
+		if laser_effect == EffectType.ENABLE:
+			disable_lasers()
+		else:
+			enable_lasers()
 
 func disable_tile_targets():
 	if !tile_mode || !tile_map_layer || !tile_targets || tile_effect != EffectType.DISABLE:

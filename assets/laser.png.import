@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh5s1u0b8qsso"
-path="res://.godot/imported/Paint Layer 4.png-44f2381cd1b5c0c402b8dcaff04df029.ctex"
+uid="uid://cjmhtlemip0gm"
+path="res://.godot/imported/laser.png-af9ca9427a51d96a36a733a4aa4be8b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/robot_world/bg/bgk/Paint Layer 4.png"
-dest_files=["res://.godot/imported/Paint Layer 4.png-44f2381cd1b5c0c402b8dcaff04df029.ctex"]
+source_file="res://assets/laser.png"
+dest_files=["res://.godot/imported/laser.png-af9ca9427a51d96a36a733a4aa4be8b2.ctex"]
 
 [params]
 
