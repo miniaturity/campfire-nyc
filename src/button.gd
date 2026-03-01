@@ -11,20 +11,47 @@ enum EffectType {
 	## Makes an object invisible, and disables its collision.
 	DISABLE,
 	## Makes an object visible, and enables its collision.
-	ENABLE
+	ENABLE,
 }
 
+class CachedTile:
+	var tile_pos: Vector2i
+	var source_id: int
+	var atlas_coords: Vector2i
+	var alternative_id: int
+	
+	func _init(tp: Vector2i, sid: int, ac: Vector2i, ai: int):
+		tile_pos = tp
+		source_id = sid
+		atlas_coords = ac
+		alternative_id = ai
+
+## Is this button a "one and done" button?[br]
+## [i]When this button is activated, it will stay activated forever.[/i]
+@export var one_shot: bool = true
+
+@export_group("Object")
+## If it should enable/disable objects
+@export var object_mode: bool = true
 ## What color should the highlight of this button be?
 @export var button_color: Color = Color.WHITE
 ## How should this button be activated?
 @export var trigger_type: TriggerType = TriggerType.PLAYER
-## Is this button a "one and done" button?[br]
-## [i]When this button is activated, it will stay activated forever.[/i]
-@export var one_shot: bool = true
 ## What should this button do when activated?
 @export var effect_type: EffectType = EffectType.DISABLE
 ## What is this button's target?
 @export var target: Node2D
+
+@export_group("Tile")
+## Whether you want to use tiles. Can be used in tangent with objects.
+@export var tile_mode: bool = false
+## What should this button do when activated? (Tile)
+@export var tile_effect: EffectType = EffectType.DISABLE
+## Tilemap
+@export var tile_map_layer: TileMapLayer
+## Targets
+@export var tile_targets: Array[Vector2i]
+var tile_targets_cache: Array[CachedTile]
 
 var active: bool = false
 
@@ -35,10 +62,14 @@ var active: bool = false
 func _ready() -> void:
 	button_highlight_sprite.self_modulate = button_color
 	
-	if target == null:
-		push_error("No target!!")
-		return
+	if object_mode:
+		if effect_type == EffectType.ENABLE:
+			_disable_target(target, false)
+		
+		if effect_type == EffectType.DISABLE:
+			_enable_target(target, false)
 	
+<<<<<<< Updated upstream
 	if effect_type == EffectType.ENABLE:
 		_disable_target(false)
 	
@@ -46,10 +77,22 @@ func _ready() -> void:
 		_enable_target(false)
 
 func _enable_target(do_tween: bool = true):
+=======
+	if tile_mode:
+		if tile_effect == EffectType.DISABLE:
+			enable_tile_targets()
+		
+		if tile_effect == EffectType.ENABLE:
+			disable_tile_targets()
+
+func _enable_target(e_target: Node2D, do_tween: bool = true):
+	if !e_target: return
+>>>>>>> Stashed changes
 	var tween = create_tween()
 	if do_tween:
-		tween.tween_property(target, "modulate", Color(1,1,1,1), 0.5)
+		tween.tween_property(e_target, "modulate", Color(1,1,1,1), 0.5)
 	else:
+<<<<<<< Updated upstream
 		target.modulate = Color(1,1,1,1)
 	target.process_mode = Node.PROCESS_MODE_INHERIT
 	
@@ -57,18 +100,30 @@ func _enable_target(do_tween: bool = true):
 		target.collision_enabled = false
 
 func _disable_target(do_tween: bool = true):
+=======
+		e_target.modulate = Color(1,1,1,1)
+	e_target.process_mode = Node.PROCESS_MODE_INHERIT
+
+func _disable_target(e_target: Node2D, do_tween: bool = true):
+	if !e_target: return
+>>>>>>> Stashed changes
 	var tween = create_tween()
 	if do_tween:
-		tween.tween_property(target, "modulate", Color(1,1,1,0), 0.5)
+		tween.tween_property(e_target, "modulate", Color(1,1,1,0), 0.5)
 	else:
+<<<<<<< Updated upstream
 		target.modulate = Color(1,1,1,0)
 	target.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	if target is TileMapLayer:
 		target.collision_enabled = false
+=======
+		e_target.modulate = Color(1,1,1,0)
+	e_target.process_mode = Node.PROCESS_MODE_DISABLED
+>>>>>>> Stashed changes
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:
@@ -77,16 +132,35 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if trigger_type == TriggerType.BOX and not body.is_in_group(&"Boxes"):
 		return
 	
-	if target == null:
+	if object_mode and target == null:
 		push_error("This button has no target!")
+		return
+	
+	if tile_mode and tile_effect == null:
+		push_error("This button has no tile target!")
 		return
 	
 	button_highlight_sprite.frame = 1
 	
+<<<<<<< Updated upstream
 	if effect_type == EffectType.DISABLE:
 		_disable_target()
 	else:
 		_enable_target()
+=======
+	if object_mode:
+		if effect_type == EffectType.DISABLE:
+			_disable_target(target)
+		else:
+			_enable_target(target)
+	
+	if tile_mode:
+		if tile_effect == EffectType.DISABLE:
+			disable_tile_targets()
+		else:
+			enable_tile_targets()
+	
+>>>>>>> Stashed changes
 
 
 func _on_trigger_area_body_exited(body: Node2D) -> void:
@@ -97,13 +171,53 @@ func _on_trigger_area_body_exited(body: Node2D) -> void:
 	if one_shot:
 		return
 	
-	if target == null:
+	if object_mode and target == null:
 		push_error("This button has no target!")
+		return
+	
+	if tile_mode and tile_effect == null:
+		push_error("This button has no tile target!")
 		return
 	
 	button_highlight_sprite.frame = 0
 	
+<<<<<<< Updated upstream
 	if effect_type == EffectType.ENABLE:
 		_disable_target()
 	else:
 		_enable_target()
+=======
+	if object_mode:
+		if effect_type == EffectType.ENABLE:
+			_disable_target(target)
+		else:
+			_enable_target(target)
+	
+	if tile_mode:
+		if tile_effect == EffectType.ENABLE:
+			disable_tile_targets()
+		else:
+			enable_tile_targets()
+		
+			
+
+func disable_tile_targets():
+	if !tile_mode || !tile_map_layer || !tile_targets || tile_effect != EffectType.DISABLE:
+		return
+	
+	for tile_target in tile_targets:
+		var sid = tile_map_layer.get_cell_source_id(tile_target)
+		var ac = tile_map_layer.get_cell_atlas_coords(tile_target)
+		var ai = tile_map_layer.get_cell_alternative_tile(tile_target)
+		tile_targets_cache.append(CachedTile.new(tile_target, sid, ac, ai))
+		tile_map_layer.set_cell(tile_target, -1)
+		
+func enable_tile_targets():
+	if !tile_mode || !tile_map_layer || !tile_targets || tile_effect != EffectType.DISABLE:
+		return
+	
+	for cached_tile in tile_targets_cache:
+		tile_map_layer.set_cell(cached_tile.tile_pos, cached_tile.source_id, cached_tile.atlas_coords, cached_tile.alternative_id)
+	tile_targets_cache = []
+	
+>>>>>>> Stashed changes

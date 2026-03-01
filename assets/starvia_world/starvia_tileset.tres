@@ -117,5 +117,7 @@ custom_data_layer_0/name = "StartTile"
 custom_data_layer_0/type = 1
 custom_data_layer_1/name = "TileType"
 custom_data_layer_1/type = 2
+custom_data_layer_2/name = "  ButtonID"
+custom_data_layer_2/type = 2
 sources/0 = SubResource("TileSetAtlasSource_ee5sl")
 sources/3 = SubResource("TileSetAtlasSource_mjhtt")
