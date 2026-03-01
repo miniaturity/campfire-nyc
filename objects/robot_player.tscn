@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b84bwm0xgshyr" path="res://assets/robot/big_hand.png" id="3_jk1q2"]
 [ext_resource type="Texture2D" uid="uid://dndb43w3j2cs2" path="res://assets/robot/small_hand.png" id="4_nafbg"]
 [ext_resource type="Texture2D" uid="uid://bvjutxu70sp5o" path="res://assets/robot/head.png" id="5_3us2v"]
+[ext_resource type="SpriteFrames" uid="uid://xbntdxn043oj" path="res://assets/deathanim.tres" id="6_jk1q2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1u8lx"]
 radius = 9.0
@@ -205,3 +206,9 @@ shape = SubResource("CapsuleShape2D_1u8lx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1127049603]
 libraries/ = SubResource("AnimationLibrary_gsln4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=476787701]
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("6_jk1q2")
+frame = 16
+frame_progress = 1.0
