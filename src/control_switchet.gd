@@ -15,3 +15,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		player.in_control = !player.in_control
 		robot.in_control = !robot.in_control
+		
+		if robot.in_control:
+			robot.play_wake_anim()
+		else:
+			robot.play_sleep_anim()
