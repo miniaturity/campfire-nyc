@@ -7,6 +7,8 @@ const JUMP_BUFFER_TIMEOUT = 5
 const PUSH_FORCE = 100
 const BLOCK_MAX_VELOCITY = 180
 
+signal goal_reached
+
 var in_control: bool = true
 var coyote_frames: int = MAX_COYOTE_FRAMES
 var jump_buffer = 0
@@ -55,3 +57,6 @@ func _physics_process(delta: float) -> void:
 			GameManager.kill()
 			
 	move_and_slide()
+
+func reached_goal():
+	pass
