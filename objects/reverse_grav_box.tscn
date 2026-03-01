@@ -1,12 +1,14 @@
-[gd_scene format=3 uid="uid://y4kbhkwmojs4"]
+[gd_scene format=3 uid="uid://djcpivtsgluw3"]
 
 [ext_resource type="Texture2D" uid="uid://bj6o01x4isk0c" path="res://assets/BOX.png" id="1_6tmij"]
+[ext_resource type="Script" uid="uid://cjo2a8p73x28v" path="res://src/reverse_grav_box.gd" id="1_hq2d3"]
 
 [node name="ReverseGravBox" type="RigidBody2D" unique_id=935545329 groups=["Boxes"]]
 self_modulate = Color(0.79, 1, 0.965, 1)
 texture_filter = 1
 mass = 1.5
 gravity_scale = -1.0
+script = ExtResource("1_hq2d3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=581349260]
 scale = Vector2(1.5, 1.5)

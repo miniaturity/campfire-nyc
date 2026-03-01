@@ -18,6 +18,8 @@ var in_control: bool = false
 var coyote_frames: int = MAX_COYOTE_FRAMES
 var jump_buffer = 0
 
+var teleporting: bool = false
+
 func _ready() -> void:
 	animation_player.play(&"power_off")
 

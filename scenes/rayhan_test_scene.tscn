@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://1sqg1tks871u" path="res://objects/button.tscn" id="6_hu0vc"]
 [ext_resource type="PackedScene" uid="uid://c88ckjrucbt4m" path="res://objects/laser.tscn" id="7_bl6kl"]
 [ext_resource type="PackedScene" uid="uid://kbcgpid4odan" path="res://objects/box.tscn" id="8_o8d6i"]
+[ext_resource type="PackedScene" uid="uid://d08y0domlu3ul" path="res://objects/box_teleporter.tscn" id="9_8j7of"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ddre"]
 size = Vector2(184, 20)
@@ -65,3 +66,13 @@ color = Color(249.476, 0, 249.476, 1)
 
 [node name="Box" parent="." unique_id=935545329 instance=ExtResource("8_o8d6i")]
 position = Vector2(416, 240)
+
+[node name="BoxTeleporter" parent="." unique_id=759254364 node_paths=PackedStringArray("other") instance=ExtResource("9_8j7of")]
+position = Vector2(456, 240)
+other = NodePath("../BoxTeleporter2")
+oneWay = false
+
+[node name="BoxTeleporter2" parent="." unique_id=1387638095 node_paths=PackedStringArray("other") instance=ExtResource("9_8j7of")]
+position = Vector2(728, 400)
+other = NodePath("../BoxTeleporter")
+oneWay = false

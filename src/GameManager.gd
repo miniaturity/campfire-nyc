@@ -2,12 +2,15 @@ extends Node
 
 # Global Variables
 
+const ReverseGravityBoxScene: PackedScene = preload("res://objects/reverse_grav_box.tscn")
+const BoxScene: PackedScene = preload("res://objects/box.tscn")
+
 # NOTE: We need to manually set each tiles
 # custom property ("TileType": int) to their respective
 # types. 
 enum TILE_TYPES {
 	DEFAULT = 0,
-	START_POS = 1,
+	START_POS = 1, # Depreceated 
 	KILL = 2,
 }
 

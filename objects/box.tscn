@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://kbcgpid4odan"]
 
+[ext_resource type="Script" uid="uid://d0uh3x6avc7lp" path="res://src/box.gd" id="1_bctmu"]
 [ext_resource type="Texture2D" uid="uid://bj6o01x4isk0c" path="res://assets/BOX.png" id="1_et42k"]
 
 [node name="Box" type="RigidBody2D" unique_id=935545329 groups=["Boxes"]]
 texture_filter = 1
+collision_layer = 5
 mass = 1.5
+script = ExtResource("1_bctmu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=581349260]
 scale = Vector2(1.5, 1.5)

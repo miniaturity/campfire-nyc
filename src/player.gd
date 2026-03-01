@@ -11,6 +11,8 @@ var in_control: bool = true
 var coyote_frames: int = MAX_COYOTE_FRAMES
 var jump_buffer = 0
 
+var teleporting: bool = false
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not in_control:
 		return
@@ -51,7 +53,6 @@ func _physics_process(delta: float) -> void:
 		if collision_block.is_in_group("Boxes") and abs(collision_block.get_linear_velocity().x) < BLOCK_MAX_VELOCITY:
 			collision_block.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
 		
-		if collision_block.is_in_group("Laser"):
+		if collision_block.is_in_group("Laser") and not collision_block.disabled:
 			GameManager.kill()
-			
 	move_and_slide()
