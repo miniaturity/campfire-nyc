@@ -22,7 +22,6 @@ width = 1.0
 default_color = Color(1, 0, 0, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=47818721 groups=["Laser"]]
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=692398561]
 shape = SubResource("RectangleShape2D_e6e0a")
