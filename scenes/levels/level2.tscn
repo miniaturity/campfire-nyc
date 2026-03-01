@@ -1,85 +1,85 @@
 [gd_scene format=4 uid="uid://d0lju8wlkul2t"]
 
-[ext_resource type="Script" uid="uid://dralvosae264y" path="res://src/level_handler.gd" id="1_vey2w"]
-[ext_resource type="PackedScene" uid="uid://ciij655t4a71r" path="res://objects/all_level_UI.tscn" id="2_4sjx1"]
-[ext_resource type="PackedScene" uid="uid://bl4051lw8ds5j" path="res://objects/level_camera.tscn" id="3_1dn6v"]
-[ext_resource type="PackedScene" uid="uid://dn316dm1lujuf" path="res://objects/skies.tscn" id="4_dtyb5"]
-[ext_resource type="TileSet" uid="uid://d2pd1k3fnvsyt" path="res://assets/starvia_world/starvia_tileset.tres" id="5_vxper"]
-[ext_resource type="TileSet" uid="uid://cboxm6qc4clkn" path="res://assets/robot_world/robot_tileset.tres" id="6_ocpph"]
-[ext_resource type="PackedScene" uid="uid://cy7p2fjmypwn2" path="res://objects/robot_player.tscn" id="7_ui0o5"]
-[ext_resource type="PackedScene" uid="uid://dy1ujdrd47cuw" path="res://objects/starvia_player.tscn" id="8_mx3nb"]
-[ext_resource type="TileSet" uid="uid://cl44qg12ws4bf" path="res://assets/general_world/general_tileset.tres" id="9_w55em"]
-[ext_resource type="PackedScene" uid="uid://c4vbkmbi7ev86" path="res://objects/goal.tscn" id="10_hiim0"]
-[ext_resource type="PackedScene" uid="uid://c88ckjrucbt4m" path="res://objects/laser.tscn" id="11_4sjx1"]
-[ext_resource type="PackedScene" uid="uid://1sqg1tks871u" path="res://objects/button.tscn" id="12_1dn6v"]
+[ext_resource type="Script" uid="uid://dralvosae264y" path="res://src/level_handler.gd" id="1_gycjm"]
+[ext_resource type="PackedScene" uid="uid://ciij655t4a71r" path="res://objects/all_level_UI.tscn" id="2_8i1lk"]
+[ext_resource type="PackedScene" uid="uid://bl4051lw8ds5j" path="res://objects/level_camera.tscn" id="3_hgky1"]
+[ext_resource type="PackedScene" uid="uid://dn316dm1lujuf" path="res://objects/skies.tscn" id="4_b4tpv"]
+[ext_resource type="TileSet" uid="uid://d2pd1k3fnvsyt" path="res://assets/starvia_world/starvia_tileset.tres" id="5_hkuam"]
+[ext_resource type="PackedScene" uid="uid://1sqg1tks871u" path="res://objects/button.tscn" id="6_f3b2k"]
+[ext_resource type="TileSet" uid="uid://cboxm6qc4clkn" path="res://assets/robot_world/robot_tileset.tres" id="7_sqrei"]
+[ext_resource type="PackedScene" uid="uid://cy7p2fjmypwn2" path="res://objects/robot_player.tscn" id="8_yhrca"]
+[ext_resource type="PackedScene" uid="uid://dy1ujdrd47cuw" path="res://objects/starvia_player.tscn" id="9_4eecq"]
+[ext_resource type="TileSet" uid="uid://cl44qg12ws4bf" path="res://assets/general_world/general_tileset.tres" id="10_b3p8y"]
+[ext_resource type="PackedScene" uid="uid://c4vbkmbi7ev86" path="res://objects/goal.tscn" id="11_bxuut"]
+[ext_resource type="PackedScene" uid="uid://c88ckjrucbt4m" path="res://objects/laser.tscn" id="12_8i1lk"]
 
 [node name="Level2" type="Node2D" unique_id=1116204900]
 texture_filter = 1
-script = ExtResource("1_vey2w")
+script = ExtResource("1_gycjm")
 
-[node name="AllLevelUi" parent="." unique_id=523024520 instance=ExtResource("2_4sjx1")]
+[node name="AllLevelUi" parent="." unique_id=523024520 instance=ExtResource("2_8i1lk")]
 visible = false
 
-[node name="LevelCamera" parent="." unique_id=431855530 instance=ExtResource("3_1dn6v")]
+[node name="LevelCamera" parent="." unique_id=431855530 instance=ExtResource("3_hgky1")]
 
-[node name="Skies" parent="." unique_id=219952505 instance=ExtResource("4_dtyb5")]
+[node name="Skies" parent="." unique_id=219952505 instance=ExtResource("4_b4tpv")]
 
 [node name="StarviaTileMapLayer" type="TileMapLayer" parent="." unique_id=1759195915]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAAAkAAAABAAMAAAABAAkAAAACAAMAAAACAAkAAAACAAMAAAADAAkAAAACAAMAAAAEAAkAAAACAAMAAAAFAAkAAAACAAMAAAAGAAkAAAADAAMAAAAJAAkAAAACAAMAAAAKAAkAAAACAAMAAAALAAkAAAACAAMAAAAMAAkAAAACAAMAAAANAAkAAAACAAMAAAAOAAkAAAACAAIAAAAPAAkAAAACAAMAAAAIAAkAAAABAAMAAAAQAAkAAAACAAIAAAARAAkAAAACAAMAAAASAAkAAAACAAIAAAAGAAMAAAABAAMAAAAHAAMAAAACAAMAAAAIAAMAAAADAAMAAAATAAkAAAACAAMAAAAUAAkAAAACAAMAAAAVAAkAAAADAAIAAAAVAAgAAAAAAAEAAAAVAAcAAAAAAAEAAAAYAA0AAAABAAAAAAAZAA0AAAACAAMAAAAaAA0AAAACAAMAAAAbAA0AAAACAAMAAAAcAA0AAAACAAMAAAAVAAYAAAADAAAAAAAUAAYAAAACAAMAAAATAAYAAAACAAMAAAASAAYAAAABAAAAAAASAAcAAAAAAAEAAAASAAgAAAAAAAEAAAAOAAgAAAAAAAAAAAAQAAgAAAAAAAEAAAAQAAcAAAAAAAAAAAAYAA4AAAAAAAEAAAAYAA8AAAAAAAEAAAAYABAAAAAAAAEAAAAYABEAAAAAAAIAAAAdAA0AAAACAAMAAAAeAA0AAAACAAMAAAAfAA0AAAACAAMAAAAgAA0AAAACAAMAAAAhAA0AAAADAAMAAAA=")
-tile_set = ExtResource("5_vxper")
+tile_set = ExtResource("5_hkuam")
 navigation_enabled = false
 
 [node name="RobotTileMapLayer" type="TileMapLayer" parent="." unique_id=618409992]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAAAoAAAABAAAAAAABAAoAAAACAAAAAAACAAoAAAACAAAAAAADAAoAAAACAAAAAAAEAAoAAAADAAAAAAAEAAsAAAACAAEAAAAEAAwAAAADAAIAAAADAAsAAAACAAEAAAACAAsAAAACAAEAAAABAAsAAAACAAEAAAAAAAsAAAABAAEAAAAAAAwAAAABAAIAAAABAAwAAAACAAIAAAACAAwAAAACAAIAAAADAAwAAAACAAIAAAAFAAsAAAACAAMAAAALAAoAAAACAAMAAAAMAAoAAAACAAMAAAANAAoAAAACAAMAAAAOAAoAAAACAAMAAAAPAAoAAAACAAMAAAAQAAoAAAACAAMAAAARAAoAAAACAAMAAAASAAoAAAACAAAAAAATAAoAAAACAAMAAAAUAAoAAAACAAMAAAAVAAoAAAADAAAAAAAMAAwAAAAAAAMAAAANAAwAAAAAAAMAAAAMAAsAAAAAAAMAAAANAAsAAAAAAAMAAAAPAAwAAAAAAAMAAAAQAAwAAAAAAAMAAAAQAAsAAAAAAAMAAAAPAAsAAAAAAAMAAAAVAAsAAAAAAAEAAAAVAAwAAAAAAAEAAAAVAA0AAAADAAIAAAAUAA0AAAACAAMAAAATAA0AAAACAAMAAAASAA0AAAABAAIAAAASAAwAAAAAAAEAAAASAAsAAAAAAAEAAAAHABAAAAACAAMAAAAIABAAAAACAAMAAAAJABAAAAADAAMAAAAGABAAAAABAAMAAAAGAAsAAAADAAMAAAAIAAsAAAABAAMAAAAJAAsAAAACAAMAAAAKAAsAAAADAAIAAAAKAAoAAAABAAAAAAAFAAoAAAABAAMAAAAGAAoAAAADAAMAAAAJAAoAAAADAAMAAAAIAAoAAAABAAMAAAAYAAYAAAABAAIAAAAZAAYAAAACAAMAAAAaAAYAAAACAAMAAAAbAAYAAAACAAMAAAAcAAYAAAACAAMAAAAYAAUAAAAAAAEAAAAYAAQAAAAAAAEAAAAYAAMAAAAAAAEAAAAYAAIAAAAAAAAAAAAdAAYAAAACAAMAAAAeAAYAAAACAAMAAAAfAAYAAAACAAMAAAAgAAYAAAACAAMAAAAhAAYAAAADAAMAAAA=")
-tile_set = ExtResource("6_ocpph")
+tile_set = ExtResource("7_sqrei")
 navigation_enabled = false
 
-[node name="RobotPlayer" parent="." unique_id=1395355102 instance=ExtResource("7_ui0o5")]
+[node name="RobotPlayer" parent="." unique_id=1395355102 instance=ExtResource("8_yhrca")]
 position = Vector2(79, 437)
 
-[node name="StarviaPlayer" parent="." unique_id=1335828167 instance=ExtResource("8_mx3nb")]
+[node name="StarviaPlayer" parent="." unique_id=1335828167 instance=ExtResource("9_4eecq")]
 position = Vector2(75, 190)
 
 [node name="GenericTileMapLayer" type="TileMapLayer" parent="." unique_id=1401872273]
 process_mode = 3
 scale = Vector2(1.2, 1.2)
 tile_map_data = PackedByteArray("AAAKAA0AAAAAAAAAAgAPABoAAAAAAAAAAQAOABoAAAAAAAAAAQANABoAAAAAAAAAAQAWABYAAAAAAAAAAwA=")
-tile_set = ExtResource("9_w55em")
+tile_set = ExtResource("10_b3p8y")
 
-[node name="Button" parent="." unique_id=1238348574 node_paths=PackedStringArray("target") instance=ExtResource("12_1dn6v")]
+[node name="Button" parent="." unique_id=1238348574 node_paths=PackedStringArray("target") instance=ExtResource("6_f3b2k")]
 position = Vector2(220, 496)
 trigger_type = 1
 target = NodePath("../Laser")
 
-[node name="Button2" parent="." unique_id=930234189 node_paths=PackedStringArray("target") instance=ExtResource("12_1dn6v")]
+[node name="Button2" parent="." unique_id=930234189 node_paths=PackedStringArray("target") instance=ExtResource("6_f3b2k")]
 position = Vector2(800, 400)
 one_shot = false
 button_color = Color(1, 0, 0, 1)
 target = NodePath("../Laser4")
 
-[node name="Button3" parent="." unique_id=923203780 node_paths=PackedStringArray("target") instance=ExtResource("12_1dn6v")]
+[node name="Button3" parent="." unique_id=923203780 node_paths=PackedStringArray("target") instance=ExtResource("6_f3b2k")]
 position = Vector2(1024, 240)
 rotation = -3.1415927
 one_shot = false
 button_color = Color(1, 0, 0, 1)
 target = NodePath("../Laser4")
 
-[node name="Goal2" parent="." unique_id=230188500 instance=ExtResource("10_hiim0")]
+[node name="Goal2" parent="." unique_id=230188500 instance=ExtResource("11_bxuut")]
 position = Vector2(1072, 392)
 
-[node name="Goal" parent="." unique_id=739807805 instance=ExtResource("10_hiim0")]
+[node name="Goal" parent="." unique_id=739807805 instance=ExtResource("11_bxuut")]
 position = Vector2(1072, 248)
 
-[node name="Laser" parent="." unique_id=1005822320 instance=ExtResource("11_4sjx1")]
+[node name="Laser" parent="." unique_id=1005822320 instance=ExtResource("12_8i1lk")]
 position = Vector2(240, 136)
 rotation = -3.1415927
 
-[node name="Laser2" parent="." unique_id=311445990 instance=ExtResource("11_4sjx1")]
+[node name="Laser2" parent="." unique_id=311445990 instance=ExtResource("12_8i1lk")]
 position = Vector2(464, 360)
 rotation = -3.1415927
 
-[node name="Laser4" parent="." unique_id=1183597028 instance=ExtResource("11_4sjx1")]
+[node name="Laser4" parent="." unique_id=1183597028 instance=ExtResource("12_8i1lk")]
 position = Vector2(928, 408)
 rotation = -6.2831855
