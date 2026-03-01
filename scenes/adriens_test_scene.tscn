@@ -7,11 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cy7p2fjmypwn2" path="res://objects/robot_player.tscn" id="4_70sbq"]
 [ext_resource type="PackedScene" uid="uid://1sqg1tks871u" path="res://objects/button.tscn" id="5_bcp3k"]
 [ext_resource type="TileSet" uid="uid://cl44qg12ws4bf" path="res://assets/general_world/general_tileset.tres" id="7_70sbq"]
-[ext_resource type="Texture2D" uid="uid://c8fwwav1q0hm8" path="res://assets/starvia_world/sky/bg.png" id="8_665la"]
-[ext_resource type="Texture2D" uid="uid://ddllx0ihhrxv2" path="res://assets/starvia_world/sky/backCity.png" id="9_yyjae"]
-[ext_resource type="Texture2D" uid="uid://0lthqhr1th60" path="res://assets/starvia_world/sky/backGrounds.png" id="10_ctw3o"]
-[ext_resource type="Texture2D" uid="uid://bdvt6t067gotx" path="res://assets/starvia_world/sky/frontCity.png" id="11_hyebf"]
-[ext_resource type="Texture2D" uid="uid://55s45hyeck6g" path="res://assets/starvia_world/sky/frontGrounds.png" id="12_31gmd"]
+[ext_resource type="PackedScene" uid="uid://dn316dm1lujuf" path="res://objects/skies.tscn" id="8_d3atu"]
 
 [node name="AdriensTestScene" type="Node2D" unique_id=558223499]
 texture_filter = 1
@@ -30,8 +26,6 @@ tile_set = ExtResource("2_bcp3k")
 [node name="StarviaPlayer" parent="." unique_id=1335828167 instance=ExtResource("3_i6ie8")]
 position = Vector2(20, 335)
 
-[node name="Camera2D" type="Camera2D" parent="StarviaPlayer" unique_id=2014050420]
-
 [node name="RobotPlayer" parent="." unique_id=1395355102 instance=ExtResource("4_70sbq")]
 position = Vector2(22, 479)
 
@@ -47,50 +41,4 @@ target = NodePath("../StarviaPlayer")
 tile_map_data = PackedByteArray("AAANABMAAAAAAAAAAQAOABMAAAAAAAAAAQAPABMAAAAAAAAAAQAQABMAAAAAAAAAAQARABMAAAAAAAAAAQASABMAAAAAAAAAAQATABMAAAAAAAAAAQAUABMAAAAAAAAAAQAVABMAAAAAAAAAAQAWABMAAAAAAAAAAQALABkAAAAAAAAAAwA=")
 tile_set = ExtResource("7_70sbq")
 
-[node name="Skies" type="Node2D" parent="." unique_id=1589024031]
-modulate = Color(0.72, 0.72, 0.72, 1)
-z_index = -1
-
-[node name="Starvia" type="Node2D" parent="Skies" unique_id=216562487]
-scale = Vector2(1.28, 0.6)
-
-[node name="BG" type="Parallax2D" parent="Skies/Starvia" unique_id=1750558648]
-repeat_size = Vector2(900, 0)
-
-[node name="Sprite" type="Sprite2D" parent="Skies/Starvia/BG" unique_id=2083062779]
-texture = ExtResource("8_665la")
-centered = false
-
-[node name="BackCity" type="Parallax2D" parent="Skies/Starvia" unique_id=1410749790]
-scroll_scale = Vector2(0.7, 1)
-repeat_size = Vector2(900, 0)
-
-[node name="Sprite" type="Sprite2D" parent="Skies/Starvia/BackCity" unique_id=2105012768]
-texture = ExtResource("9_yyjae")
-centered = false
-
-[node name="BackGrounds" type="Parallax2D" parent="Skies/Starvia" unique_id=1429698362]
-scroll_scale = Vector2(0.7, 1)
-repeat_size = Vector2(900, 0)
-
-[node name="Sprite" type="Sprite2D" parent="Skies/Starvia/BackGrounds" unique_id=610784230]
-texture = ExtResource("10_ctw3o")
-centered = false
-
-[node name="FrontCity" type="Parallax2D" parent="Skies/Starvia" unique_id=1765318846]
-scroll_scale = Vector2(0.9, 1)
-repeat_size = Vector2(900, 0)
-
-[node name="Sprite" type="Sprite2D" parent="Skies/Starvia/FrontCity" unique_id=1582431288]
-texture = ExtResource("11_hyebf")
-centered = false
-
-[node name="FrontGrounds" type="Parallax2D" parent="Skies/Starvia" unique_id=300157509]
-scroll_scale = Vector2(1.03, 1)
-repeat_size = Vector2(900, 0)
-
-[node name="Sprite" type="Sprite2D" parent="Skies/Starvia/FrontGrounds" unique_id=204787719]
-texture = ExtResource("12_31gmd")
-centered = false
-
-[node name="Robot" type="Node2D" parent="Skies" unique_id=1379093366]
+[node name="Skies" parent="." unique_id=219952505 instance=ExtResource("8_d3atu")]
