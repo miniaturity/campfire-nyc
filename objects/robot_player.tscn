@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dndb43w3j2cs2" path="res://assets/robot/small_hand.png" id="4_nafbg"]
 [ext_resource type="Texture2D" uid="uid://bvjutxu70sp5o" path="res://assets/robot/head.png" id="5_3us2v"]
 [ext_resource type="SpriteFrames" uid="uid://b2ksyyf488n5n" path="res://assets/deathanim.tres" id="6_jk1q2"]
+[ext_resource type="AudioStream" uid="uid://5qe68ij0lblc" path="res://sound/jump.wav" id="7_3us2v"]
+[ext_resource type="AudioStream" uid="uid://xd73ustoekc" path="res://sound/powerUp.wav" id="8_ty7rm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1u8lx"]
 radius = 9.0
@@ -215,3 +217,9 @@ scale = Vector2(3, 3)
 sprite_frames = ExtResource("6_jk1q2")
 frame = 16
 frame_progress = 1.0
+
+[node name="JumpSFX" type="AudioStreamPlayer2D" parent="." unique_id=198557818]
+stream = ExtResource("7_3us2v")
+
+[node name="GoalSFX" type="AudioStreamPlayer2D" parent="." unique_id=901050552]
+stream = ExtResource("8_ty7rm")

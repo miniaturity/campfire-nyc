@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bv8ne5lar5bp0" path="res://src/player.gd" id="1_ykyjo"]
 [ext_resource type="Texture2D" uid="uid://6fuhnjj6n4b5" path="res://assets/starvia/starvia.png" id="2_ykyjo"]
 [ext_resource type="SpriteFrames" uid="uid://b2ksyyf488n5n" path="res://assets/deathanim.tres" id="3_tokic"]
+[ext_resource type="AudioStream" uid="uid://5qe68ij0lblc" path="res://sound/jump.wav" id="4_1yd0e"]
+[ext_resource type="AudioStream" uid="uid://xd73ustoekc" path="res://sound/powerUp.wav" id="5_dmge4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uxov2"]
 height = 52.0
@@ -25,3 +27,9 @@ scale = Vector2(3, 3)
 sprite_frames = ExtResource("3_tokic")
 frame = 16
 frame_progress = 1.0
+
+[node name="JumpSFX" type="AudioStreamPlayer2D" parent="." unique_id=1184124275]
+stream = ExtResource("4_1yd0e")
+
+[node name="GoalSFX" type="AudioStreamPlayer2D" parent="." unique_id=1971535935]
+stream = ExtResource("5_dmge4")

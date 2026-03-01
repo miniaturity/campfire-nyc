@@ -65,6 +65,7 @@ var active: bool = false
 
 @onready var button_highlight_sprite: Sprite2D = $ButtonHighlightSprite
 @onready var trigger_area: Area2D = $TriggerArea
+@onready var click_sfx: AudioStreamPlayer2D = $ClickSFX
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -127,6 +128,8 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if trigger_type == TriggerType.BOX and not body.is_in_group(&"Boxes"):
 		return
 	
+	click_sfx.play()
+	
 	if object_mode and target == null:
 		push_error("This button has no target!")
 		return
@@ -164,6 +167,8 @@ func _on_trigger_area_body_exited(body: Node2D) -> void:
 		return
 	if one_shot:
 		return
+	
+	click_sfx.play()
 	
 	if object_mode and target == null:
 		push_error("This button has no target!")
