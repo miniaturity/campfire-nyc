@@ -5,13 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://0lthqhr1th60" path="res://assets/starvia_world/sky/backGrounds.png" id="3_7qwic"]
 [ext_resource type="Texture2D" uid="uid://bdvt6t067gotx" path="res://assets/starvia_world/sky/frontCity.png" id="4_sbi73"]
 [ext_resource type="Texture2D" uid="uid://55s45hyeck6g" path="res://assets/starvia_world/sky/frontGrounds.png" id="5_5x04w"]
+[ext_resource type="Texture2D" uid="uid://drvfje7mmy38f" path="res://assets/robot_world/bg/BG_robotbg_1.png" id="6_5x04w"]
+[ext_resource type="Texture2D" uid="uid://bpalddrec3npt" path="res://assets/robot_world/bg/Back_robotbg_1.png" id="7_6h3iy"]
+[ext_resource type="Texture2D" uid="uid://chfcja341pb85" path="res://assets/robot_world/bg/Middle_robotbg_1.png" id="8_8moke"]
+[ext_resource type="Texture2D" uid="uid://dwhw8umu8ndqh" path="res://assets/robot_world/bg/Front_robotbg_1.png" id="9_fjmit"]
 
 [node name="Skies" type="Node2D" unique_id=219952505]
 modulate = Color(0.72, 0.72, 0.72, 1)
 z_index = -1
+texture_filter = 1
 
 [node name="Starvia" type="Node2D" parent="." unique_id=951554770]
-scale = Vector2(1.28, 0.6)
+scale = Vector2(1.28, 0.54)
 
 [node name="BG" type="Parallax2D" parent="Starvia" unique_id=1700383127]
 repeat_size = Vector2(900, 0)
@@ -53,3 +58,44 @@ texture = ExtResource("5_5x04w")
 centered = false
 
 [node name="Robot" type="Node2D" parent="." unique_id=1439172005]
+position = Vector2(0, 324)
+scale = Vector2(1.28, 0.54)
+
+[node name="BG" type="Parallax2D" parent="Robot" unique_id=954824317]
+repeat_size = Vector2(900, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Robot/BG" unique_id=916651308]
+scale = Vector2(3, 3)
+texture = ExtResource("6_5x04w")
+centered = false
+flip_v = true
+
+[node name="BackCity" type="Parallax2D" parent="Robot" unique_id=476635224]
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(900, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Robot/BackCity" unique_id=2055974968]
+scale = Vector2(3, 3)
+texture = ExtResource("7_6h3iy")
+centered = false
+flip_v = true
+
+[node name="MiddleCity" type="Parallax2D" parent="Robot" unique_id=396826616]
+scroll_scale = Vector2(0.8, 1)
+repeat_size = Vector2(900, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Robot/MiddleCity" unique_id=1989803308]
+scale = Vector2(3, 3)
+texture = ExtResource("8_8moke")
+centered = false
+flip_v = true
+
+[node name="FrontCity" type="Parallax2D" parent="Robot" unique_id=735848704]
+scroll_scale = Vector2(0.9, 1)
+repeat_size = Vector2(900, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Robot/FrontCity" unique_id=520985474]
+scale = Vector2(3, 3)
+texture = ExtResource("9_fjmit")
+centered = false
+flip_v = true
