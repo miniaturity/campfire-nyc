@@ -52,9 +52,11 @@ func _physics_process(_delta: float) -> void:
 	
 	if !active:
 		raycast.enabled = false
+		collision.disabled = true
 		line_2d.self_modulate.a = 0
 	else:
 		raycast.enabled = true
+		collision.disabled = false
 		line_2d.self_modulate.a = 1
 		
 		if raycast.is_colliding():

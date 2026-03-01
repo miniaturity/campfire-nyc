@@ -1,20 +1,22 @@
 [gd_scene format=4 uid="uid://0p8h3erg8q0"]
 
 [ext_resource type="PackedScene" uid="uid://ciij655t4a71r" path="res://objects/all_level_UI.tscn" id="1_1nvli"]
-[ext_resource type="Script" uid="uid://dralvosae264y" path="res://src/level_handler.gd" id="1_d3ub6"]
-[ext_resource type="PackedScene" uid="uid://bl4051lw8ds5j" path="res://objects/level_camera.tscn" id="2_vals0"]
-[ext_resource type="PackedScene" uid="uid://dn316dm1lujuf" path="res://objects/skies.tscn" id="3_oem7y"]
+[ext_resource type="Script" path="res://src/level_handler.gd" id="1_d3ub6"]
+[ext_resource type="PackedScene" uid="uid://cbfuu1cl308vr" path="res://scenes/levels/level1.tscn" id="2_7s2gi"]
+[ext_resource type="PackedScene" path="res://objects/level_camera.tscn" id="2_vals0"]
+[ext_resource type="PackedScene" path="res://objects/skies.tscn" id="3_oem7y"]
 [ext_resource type="TileSet" uid="uid://d2pd1k3fnvsyt" path="res://assets/starvia_world/starvia_tileset.tres" id="4_a76di"]
 [ext_resource type="TileSet" uid="uid://cboxm6qc4clkn" path="res://assets/robot_world/robot_tileset.tres" id="5_d3ub6"]
 [ext_resource type="PackedScene" uid="uid://cy7p2fjmypwn2" path="res://objects/robot_player.tscn" id="6_7s2gi"]
 [ext_resource type="PackedScene" uid="uid://dy1ujdrd47cuw" path="res://objects/starvia_player.tscn" id="7_fj52k"]
 [ext_resource type="PackedScene" uid="uid://1sqg1tks871u" path="res://objects/button.tscn" id="8_vals0"]
 [ext_resource type="TileSet" uid="uid://cl44qg12ws4bf" path="res://assets/general_world/general_tileset.tres" id="9_oem7y"]
-[ext_resource type="PackedScene" uid="uid://c4vbkmbi7ev86" path="res://objects/goal.tscn" id="10_a76di"]
+[ext_resource type="PackedScene" path="res://objects/goal.tscn" id="10_a76di"]
 
 [node name="Level0" type="Node2D" unique_id=1116204900]
 texture_filter = 1
 script = ExtResource("1_d3ub6")
+next_scene = ExtResource("2_7s2gi")
 
 [node name="AllLevelUi" parent="." unique_id=523024520 instance=ExtResource("1_1nvli")]
 
