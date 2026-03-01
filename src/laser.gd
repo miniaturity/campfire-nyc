@@ -6,13 +6,6 @@ extends Node2D
 @onready var raycast = $StaticBody2D/RayCast2D
 @onready var collision = $StaticBody2D
 
-## Whether it is a start or endpoint
-## Prevents drawing laser twice
-@export var start: bool = true
-
-## Other laser to connect to.
-@export var other: Laser
-
 ## Laser on/off by default.
 @export var active: bool = true
 ## Whether it can be blocked by boxes or not.
@@ -50,21 +43,3 @@ func _physics_process(_delta: float) -> void:
 	if not (collider is Node2D): return
 	collider = collider as Node2D
 	line_2d.set_point_position(1, to_local(raycast.get_collision_point()))
-	
-	if !active:
-		raycast.enabled = false
-		if collision.collision_layer != 4:
-			collision.collision_layer = 4
-		line_2d.self_modulate.a = 0
-	else:
-		raycast.enabled = true
-		if collision.collision_layer != 2:
-			collision.collision_layer = 2
-		line_2d.self_modulate.a = 1
-		
-		if raycast.is_colliding():
-			var global_pt = raycast.get_collision_point()
-			var local_pt = raycast.to_local(global_pt)
-			
-			if local_pt:
-				line_2d.points = [Vector2(0, 0), local_pt]
