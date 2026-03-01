@@ -178,21 +178,25 @@ script = ExtResource("1_r5nbg")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=193426798]
 texture = ExtResource("2_ucics")
+flip_h = true
 flip_v = true
 
 [node name="Hand1" type="Sprite2D" parent="Body" unique_id=1830500971]
 position = Vector2(-13, 0)
 texture = ExtResource("3_jk1q2")
+flip_h = true
 flip_v = true
 
 [node name="Hand2" type="Sprite2D" parent="Body" unique_id=193064353]
 position = Vector2(13, 0)
 texture = ExtResource("4_nafbg")
+flip_h = true
 flip_v = true
 
 [node name="Head" type="Sprite2D" parent="Body" unique_id=16683018]
 position = Vector2(0, 26)
 texture = ExtResource("5_3us2v")
+flip_h = true
 flip_v = true
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=2118204640]

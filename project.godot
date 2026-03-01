@@ -13,11 +13,17 @@ config_version=5
 config/name="Campfire NYC"
 run/main_scene="uid://c6njo6vjiqgik"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+run/max_fps=60
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/stretch_mode=0
+boot_splash/use_filter=false
+boot_splash/image="uid://dluhv5krahdgu"
+config/icon="uid://wi5j3e2psdqr"
+boot_splash/minimum_display_time=200
 
 [autoload]
 
-ControlSwitchet="*uid://clhx6kogjdnaw"
+ControlSwitchet="uid://clhx6kogjdnaw"
 GameManager="*uid://cgrwydxnjg60m"
 
 [editor_plugins]
