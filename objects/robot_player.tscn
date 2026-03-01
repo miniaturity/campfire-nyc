@@ -175,6 +175,8 @@ _data = {
 
 [node name="RobotPlayer" type="CharacterBody2D" unique_id=1395355102 groups=["Players"]]
 texture_filter = 1
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_r5nbg")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=193426798]

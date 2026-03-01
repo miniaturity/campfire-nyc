@@ -83,10 +83,12 @@ func _ready() -> void:
 			disable_lasers()
 
 func disable_lasers():
+	print("disabled")
 	for laser in target_lasers:
 		laser.disable()
 
 func enable_lasers():
+	print("enabled")
 	for laser in target_lasers:
 		laser.enable()
 

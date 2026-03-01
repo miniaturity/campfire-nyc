@@ -3,6 +3,8 @@ class_name Laser
 extends Node2D
 
 @onready var line_2d = $Line2D
+@onready var raycast = $StaticBody2D/RayCast2D
+@onready var collision = $StaticBody2D/CollisionShape2D
 
 ## Whether it is a start or endpoint
 ## Prevents drawing laser twice
@@ -15,6 +17,11 @@ extends Node2D
 @export var active: bool = true
 ## Whether it can be blocked by boxes or not.
 @export var blockable: bool = true
+
+## Laser color
+@export var color: Color = Color(255, 0, 0)
+
+var end_pos: Vector2
 
 func disable():
 	active = false
@@ -34,12 +41,28 @@ func _ready() -> void:
 		push_error("Duplicate starting points for a laser!")
 		return
 	
-	line_2d.points = [Vector2.ZERO, Vector2.ZERO]
+	line_2d.default_color = color
+	line_2d.points = [Vector2(0, 0), to_local(other.global_position)]
+	if blockable:
+		raycast.target_position = to_local(other.global_position)
 
-func _process(_delta: float) -> void:
-	if !start || !active: return
-	var start_pos = to_local(global_position)
-	var end_pos = to_local(other.global_position)
 	
-	line_2d.points = [start_pos, end_pos]
+func _physics_process(_delta: float) -> void:
+	if !start || line_2d.points[1] == Vector2(0, 0) || !blockable: return
 	
+	if !active:
+		raycast.enabled = false
+		collision.set_deferred("disabled", true)
+		line_2d.self_modulate.a = 0
+	else:
+		raycast.enabled = true
+		if collision.disabled:
+			collision.set_deferred("disabled", false)
+		line_2d.self_modulate.a = 1
+		
+		if raycast.is_colliding():
+			var global_pt = raycast.get_collision_point()
+			var local_pt = raycast.to_local(global_pt)
+			
+			if local_pt:
+				line_2d.points = [Vector2(0, 0), local_pt]
