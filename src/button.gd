@@ -100,7 +100,7 @@ func _enable_target(e_target: Node2D, do_tween: bool = true):
 	target.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	if target is TileMapLayer:
-		target.collision_enabled = false
+		target.collision_enabled = true
 
 
 
