@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://plv4xxab1wjp"]
 
 [ext_resource type="Texture2D" uid="uid://wi5j3e2psdqr" path="res://assets/logo.png" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://wjlbte74j6lr" path="res://src/main_menu.gd" id="1_wu84c"]
 [ext_resource type="FontFile" uid="uid://b80ewlody0h3n" path="res://assets/fonts/TheWall.ttf" id="2_bqqt6"]
 [ext_resource type="FontFile" uid="uid://bqmgwdmhwcpty" path="res://assets/fonts/ChiKareGo.ttf" id="3_wu84c"]
 
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wu84c")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1561637584]
 layout_mode = 1
@@ -61,8 +63,9 @@ theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 32
 text = "Play"
 
-[node name="PlayButton2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=838011341]
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=838011341]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 32
-text = "Play"
+text = "Quit
+"
