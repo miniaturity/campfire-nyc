@@ -36,42 +36,6 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if line_2d.points.size() != 2 || line_2d.points[1] == Vector2(0, 0) || !blockable: return
 	
-	if !other:
-		if !active:
-			if collision.collision_layer != 4:
-				collision.collision_layer = 4
-		else:
-			if collision.collision_layer != 2:
-				collision.collision_layer = 2
-		return
-	
-	if !other:
-		if !active:
-			if collision.collision_layer != 4:
-				collision.collision_layer = 4
-		else:
-			if collision.collision_layer != 2:
-				collision.collision_layer = 2
-		return
-	
-	if !other:
-		if !active:
-			if collision.collision_layer != 4:
-				collision.collision_layer = 4
-		else:
-			if collision.collision_layer != 2:
-				collision.collision_layer = 2
-		return
-	
-	if !other:
-		if !active:
-			if collision.collision_layer != 4:
-				collision.collision_layer = 4
-		else:
-			if collision.collision_layer != 2:
-				collision.collision_layer = 2
-		return
-	
 	var collider = raycast.get_collider()
 	line_2d.set_point_position(1, to_local(raycast.get_collision_point()))
 	if not (collider is Node2D): return
