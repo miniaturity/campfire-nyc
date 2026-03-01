@@ -180,5 +180,6 @@ func enable_tile_targets():
 	
 	for cached_tile in tile_targets_cache:
 		tile_map_layer.set_cell(cached_tile.tile_pos, cached_tile.source_id, cached_tile.atlas_coords, cached_tile.alternative_id)
+	
 	tile_targets_cache = []
 	
