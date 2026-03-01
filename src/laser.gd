@@ -1,9 +1,8 @@
-
 class_name Laser
 extends Node2D
 
 @onready var line_2d = $Line2D
-@onready var raycast = $StaticBody2D/RayCast2D
+@onready var raycast = $RayCast2D
 @onready var collision = $StaticBody2D
 
 ## Laser on/off by default.
@@ -40,6 +39,9 @@ func _physics_process(_delta: float) -> void:
 	if not raycast.is_colliding(): return
 	
 	var collider = raycast.get_collider()
+	line_2d.set_point_position(1, to_local(raycast.get_collision_point()))
 	if not (collider is Node2D): return
 	collider = collider as Node2D
-	line_2d.set_point_position(1, to_local(raycast.get_collision_point()))
+	
+	if collider.is_in_group(&"Players"):
+		get_tree().reload_current_scene()
