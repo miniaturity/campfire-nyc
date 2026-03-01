@@ -41,7 +41,5 @@ func _process(_delta: float) -> void:
 	var start_pos = to_local(global_position)
 	var end_pos = to_local(other.global_position)
 	
-	print("StartPos: " + str(start_pos))
-	print("EndPos: " + str(end_pos))
 	line_2d.points = [start_pos, end_pos]
 	
