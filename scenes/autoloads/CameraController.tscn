@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cqvndy51xhwsv"]
+
+[ext_resource type="Script" uid="uid://dtnyjtb3bv3rp" path="res://src/CameraController.gd" id="1_yyq5r"]
+
+[node name="CameraController" type="Node" unique_id=700592871]
+script = ExtResource("1_yyq5r")
+
+[node name="CameraToUse" type="Camera2D" parent="." unique_id=1258441435]
+anchor_mode = 0
+enabled = false
+process_callback = 0
+limit_left = -10000002
+limit_top = 0
+limit_right = 9999998
+limit_bottom = 648
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
