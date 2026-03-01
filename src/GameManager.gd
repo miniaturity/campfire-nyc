@@ -22,6 +22,23 @@ var robot_tile_map: TileMapLayer
 var starvia_player: CharacterBody2D
 var robot_player: CharacterBody2D
 
+## Levels in order
+@export var levels: Array[PackedScene]
+var currentLevel: int = 0
+
+## Call this on level end
+func on_level_end():
+	if currentLevel == levels.size() - 1:
+		on_all_levels_finished()
+		return
+	else:
+		currentLevel += 1
+		get_tree().change_scene_to_packed(levels[currentLevel])
+
+## TODO: Special behavior for final level end
+func on_all_levels_finished():
+	pass
+
 func register_level(starvia_map, robot_map, starvia_p, robot_p):
 	starvia_tile_map = starvia_map
 	robot_tile_map = robot_map
