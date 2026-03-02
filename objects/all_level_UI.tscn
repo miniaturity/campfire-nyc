@@ -6,5 +6,6 @@
 [node name="AllLevelUi" type="CanvasLayer" unique_id=523024520]
 
 [node name="Shader" parent="." unique_id=106511936 instance=ExtResource("1_jlqxt")]
+visible = false
 
 [node name="DarkeningUi" parent="." unique_id=485671579 instance=ExtResource("1_7gc2b")]

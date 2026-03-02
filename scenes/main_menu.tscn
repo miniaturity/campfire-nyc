@@ -9,6 +9,10 @@
 font = ExtResource("2_bqqt6")
 font_size = 48
 
+[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+font = ExtResource("3_wu84c")
+font_size = 32
+
 [node name="MainMenu" type="Control" unique_id=1123790851]
 texture_filter = 1
 layout_mode = 3
@@ -69,3 +73,14 @@ theme_override_fonts/font = ExtResource("3_wu84c")
 theme_override_font_sizes/font_size = 32
 text = "Quit
 "
+
+[node name="Controls" type="Label" parent="MarginContainer/VBoxContainer" unique_id=544686349]
+layout_mode = 2
+text = "Controls:
+Arrow Keys - Move
+Space - Jump
+E - Change Character
+
+(Can also be played with a controller!)"
+label_settings = SubResource("LabelSettings_wu84c")
+autowrap_mode = 2

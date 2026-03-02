@@ -19,7 +19,6 @@ script = ExtResource("1_nkeig")
 next_scene = ExtResource("2_lgguw")
 
 [node name="AllLevelUi" parent="." unique_id=523024520 instance=ExtResource("2_nfihu")]
-visible = false
 
 [node name="LevelCamera" parent="." unique_id=431855530 instance=ExtResource("3_lgguw")]
 
